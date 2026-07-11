@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Local editor / tooling config (machine-specific paths)
+.claude/
+
+# Python
+__pycache__/
+*.pyc

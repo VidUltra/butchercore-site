@@ -1,0 +1,64 @@
+/* Butcher Core — self-hosted Tabler Icons v3.44.0, SUBSET to the icons this site uses.
+   Outline glyphs -> tabler-icons.woff2 | filled star -> tabler-icons-filled.woff2 (ti-star-filled).
+   If you add new `ti ti-*` icons to the markup, regenerate this file and the woff2 subsets.
+   Regenerate:  python3 rebuild_icons.py  (see scratchpad). */
+@font-face{font-family:"tabler-icons";font-style:normal;font-weight:400;font-display:swap;src:url("tabler-icons.woff2?v=5") format("woff2")}
+@font-face{font-family:"tabler-icons-filled";font-style:normal;font-weight:400;font-display:swap;src:url("tabler-icons-filled.woff2") format("woff2")}
+.ti{font-family:"tabler-icons" !important;speak:none;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.ti-adjustments:before{content:"\ea03"}
+.ti-alert-circle:before{content:"\ea05"}
+.ti-arrow-right:before{content:"\ea1f"}
+.ti-bolt:before{content:"\ea38"}
+.ti-building-store:before{content:"\ea4e"}
+.ti-calendar-check:before{content:"\f824"}
+.ti-calendar-event:before{content:"\ea52"}
+.ti-cash:before{content:"\ea55"}
+.ti-chart-bar:before{content:"\ea59"}
+.ti-check:before{content:"\ea5e"}
+.ti-checks:before{content:"\ebaa"}
+.ti-chevron-down:before{content:"\ea5f"}
+.ti-chevron-right:before{content:"\ea61"}
+.ti-clipboard-check:before{content:"\ea6c"}
+.ti-clipboard-list:before{content:"\ea6d"}
+.ti-clock-hour-4:before{content:"\f319"}
+.ti-cloud-check:before{content:"\f84d"}
+.ti-cooker:before{content:"\f57a"}
+.ti-copy:before{content:"\ea7a"}
+.ti-deer:before{content:"\f4c5"}
+.ti-device-tablet:before{content:"\ea8c"}
+.ti-external-link:before{content:"\ea99"}
+.ti-file-import:before{content:"\edea"}
+.ti-forms:before{content:"\ee8f"}
+.ti-hand-move:before{content:"\ef50"}
+.ti-headset:before{content:"\eb90"}
+.ti-history:before{content:"\ebea"}
+.ti-layout-dashboard:before{content:"\f02c"}
+.ti-list-details:before{content:"\ef40"}
+.ti-lock:before{content:"\eae2"}
+.ti-mail:before{content:"\eae5"}
+.ti-map-pin:before{content:"\eae8"}
+.ti-meat:before{content:"\ef12"}
+.ti-message:before{content:"\eaef"}
+.ti-message-2:before{content:"\eaec"}
+.ti-message-2-check:before{content:"\f95e"}
+.ti-pencil:before{content:"\eb04"}
+.ti-phone:before{content:"\eb09"}
+.ti-photo:before{content:"\eb0a"}
+.ti-player-play:before{content:"\ed46"}
+.ti-plus:before{content:"\eb0b"}
+.ti-receipt:before{content:"\edfd"}
+.ti-refresh:before{content:"\eb13"}
+.ti-rocket:before{content:"\ec45"}
+.ti-scale:before{content:"\ebc2"}
+.ti-search:before{content:"\eb1c"}
+.ti-send:before{content:"\eb1e"}
+.ti-shield-lock:before{content:"\ed58"}
+.ti-sparkles:before{content:"\f6d7"}
+.ti-tag:before{content:"\10096"}
+.ti-tools-kitchen-2:before{content:"\eeff"}
+.ti-tractor:before{content:"\ec0d"}
+.ti-user:before{content:"\eb4d"}
+.ti-user-shield:before{content:"\f7d0"}
+.ti-users:before{content:"\ebf2"}
+.ti-star-filled{font-family:"tabler-icons-filled" !important}
+.ti-star-filled:before{content:"\f6a6"}

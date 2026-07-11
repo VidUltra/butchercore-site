@@ -1,0 +1,7 @@
+# Butcher Core — https://butchercore.com
+# Operations software for meat processors & custom butcher shops.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://butchercore.com/sitemap.xml

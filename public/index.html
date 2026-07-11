@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Butcher Core — Operations software for meat processors &amp; custom butcher shops</title>
+<meta name="description" content="Operations software for meat processors &amp; custom butcher shops — run your kill schedule, cut sheets, billing &amp; invoices, customer texting and reports in one portal. Beef, pork, lamb, goat &amp; deer.">
+<link rel="canonical" href="https://butchercore.com/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="VidUltra LLC">
+<meta name="theme-color" content="#9B2E26">
+<meta name="apple-mobile-web-app-title" content="Butcher Core">
+
+<!-- Open Graph (Facebook, iMessage/SMS, LinkedIn, etc.) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Butcher Core">
+<meta property="og:title" content="Butcher Core — operations software for meat processors &amp; custom butcher shops">
+<meta property="og:description" content="Operations software for meat processors &amp; custom butcher shops. Run your kill schedule, cut sheets, billing &amp; invoices, customer texting and reports from one portal. Beef, pork, lamb, goat &amp; deer.">
+<meta property="og:url" content="https://butchercore.com/">
+<meta property="og:image" content="https://butchercore.com/og-image.png">
+<meta property="og:image:secure_url" content="https://butchercore.com/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Butcher Core — operations software for meat processors and custom butcher shops. Beef, pork, lamb, goat and deer.">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter / X card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Butcher Core — operations software for meat processors &amp; custom butcher shops">
+<meta name="twitter:description" content="Operations software for meat processors &amp; custom butcher shops — kill schedule, cut sheets, billing, customer texting and reports in one portal.">
+<meta name="twitter:image" content="https://butchercore.com/og-image.png">
+<meta name="twitter:image:alt" content="Butcher Core — operations software for meat processors and custom butcher shops.">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="fonts/tabler-icons.css?v=5">
+<link rel="stylesheet" href="styles.css?v=5">
+
+<!-- Structured data (schema.org / JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://butchercore.com/#organization",
+      "name": "Butcher Core",
+      "legalName": "VidUltra LLC",
+      "url": "https://butchercore.com/",
+      "logo": "https://butchercore.com/icon-512.png",
+      "image": "https://butchercore.com/og-image.png",
+      "description": "Operations software for meat processors and custom butcher shops — kill schedule, cut sheets, billing, customer texting and reports in one portal.",
+      "email": "justin@vidultra.com",
+      "telephone": "+1-234-567-6797",
+      "parentOrganization": { "@type": "Organization", "name": "VidUltra LLC", "url": "https://vidultra.com" },
+      "sameAs": ["https://vidultra.com"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://butchercore.com/#website",
+      "url": "https://butchercore.com/",
+      "name": "Butcher Core",
+      "inLanguage": "en-US",
+      "publisher": { "@id": "https://butchercore.com/#organization" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Butcher Core",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Meat processing & butcher shop operations software",
+      "operatingSystem": "Web browser (any device)",
+      "url": "https://butchercore.com/",
+      "image": "https://butchercore.com/og-image.png",
+      "description": "One portal for meat processors and custom butcher shops: kill & slaughter schedule, custom cut sheets for beef, pork, lamb, goat and deer, per-head tag & weight, billing and invoices, two-way customer texting, and reports.",
+      "featureList": [
+        "Kill & slaughter schedule with deposits and confirmations",
+        "Custom digital cut sheets for beef, pork, lamb, goat & deer",
+        "Cut-sheet history & reuse",
+        "Per-head tag & weight tracking",
+        "Billing, rate cards, sales tax & invoices",
+        "Reports & analytics",
+        "Two-way customer texting from the shop's own number",
+        "Customers & farmers directories",
+        "Multi-shop, roles & row-level security"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "249",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "249",
+          "priceCurrency": "USD",
+          "referenceQuantity": { "@type": "QuantitativeValue", "value": "1", "unitCode": "MON" }
+        },
+        "url": "https://butchercore.com/pricing.html"
+      },
+      "publisher": { "@id": "https://butchercore.com/#organization" }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="Butcher Core home">
+      <span class="brand-mark"><i class="ti ti-meat"></i></span>
+      <span class="brand-text">
+        <span class="brand-name">Butcher<b> Core</b></span>
+        <span class="brand-by">by <b>VidUltra</b></span>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="#top">Home</a>
+      <div class="nav-dd">
+        <a href="#features" class="nav-dd-toggle">Features <i class="ti ti-chevron-down chev"></i></a>
+        <div class="nav-dd-menu">
+          <a href="#schedule"><i class="ti ti-calendar-event"></i><span><b>Kill schedule</b><small>Bookings, deposits &amp; confirmations</small></span></a>
+          <a href="#cutsheets"><i class="ti ti-clipboard-check"></i><span><b>Cut sheets</b><small>Custom forms, all 5 species</small></span></a>
+          <a href="#history"><i class="ti ti-history"></i><span><b>Cut-sheet history</b><small>Reuse &amp; text last year's sheet</small></span></a>
+          <a href="#billing"><i class="ti ti-receipt"></i><span><b>Billing &amp; invoices</b><small>Rate cards, tax &amp; auto-billing</small></span></a>
+          <a href="#reports"><i class="ti ti-chart-bar"></i><span><b>Reports</b><small>Animals, dollars &amp; throughput</small></span></a>
+          <a href="#texting"><i class="ti ti-message-2"></i><span><b>Customer texting</b><small>Your own number, shared inbox</small></span></a>
+          <a href="#customers"><i class="ti ti-users"></i><span><b>Customers &amp; farmers</b><small>The people side, kept straight</small></span></a>
+          <a href="#security"><i class="ti ti-shield-lock"></i><span><b>Multi-shop &amp; security</b><small>Walled off, staff logins</small></span></a>
+        </div>
+      </div>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <a href="https://app.butchercore.com" class="nav-signin">Sign in</a>
+      <a href="contact.html" class="btn btn-primary">Book a demo</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#top">Home</a>
+  <div class="mnav-group">Features</div>
+  <a href="#schedule" class="mnav-sub">Kill schedule</a>
+  <a href="#cutsheets" class="mnav-sub">Cut sheets</a>
+  <a href="#history" class="mnav-sub">Cut-sheet history</a>
+  <a href="#billing" class="mnav-sub">Billing &amp; invoices</a>
+  <a href="#reports" class="mnav-sub">Reports</a>
+  <a href="#texting" class="mnav-sub">Customer texting</a>
+  <a href="#customers" class="mnav-sub">Customers &amp; farmers</a>
+  <a href="#security" class="mnav-sub">Multi-shop &amp; security</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="contact.html">Contact</a>
+  <a href="https://app.butchercore.com">Sign in</a>
+  <a href="contact.html" class="btn btn-primary">Book a demo</a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy reveal">
+        <span class="eyebrow">Software for meat processors &amp; custom butcher shops</span>
+        <h1 class="display">Run the whole <span class="accent-underline">cut floor</span> from one place.</h1>
+        <p class="hero-sub">Butcher Core keeps your kill schedule, cut sheets, customers and farmers in a single portal — every record from drop-off to pickup, live for your whole crew on any device on the floor.</p>
+        <div class="hero-cta">
+          <a href="contact.html" class="btn btn-primary btn-lg"><i class="ti ti-calendar-check"></i> Book a demo</a>
+          <a href="#features" class="btn btn-lg"><i class="ti ti-player-play"></i> Take the tour</a>
+        </div>
+        <p class="hero-note"><i class="ti ti-check"></i> <b>Built on the kill floor</b>, not in a boardroom — proven daily at a working packing house.</p>
+        <div class="species-strip">
+          <span class="pill pill-beef"><i class="ti ti-meat"></i> Beef</span>
+          <span class="pill pill-pork">Pork</span>
+          <span class="pill pill-lamb">Lamb</span>
+          <span class="pill pill-goat">Goat</span>
+          <span class="pill pill-deer"><i class="ti ti-deer"></i> Deer</span>
+        </div>
+      </div>
+
+      <!-- Product mockup -->
+      <div class="hero-media reveal d2">
+        <div class="panel-wrap">
+          <div class="float-card float-tr">
+            <i style="background:var(--ok-soft);color:var(--ok)"><i class="ti ti-message-2-check"></i></i>
+            <div><div class="ft">Order ready · texted</div><div class="fv">"Come pick up" ✓</div></div>
+          </div>
+          <div class="float-card float-bl">
+            <i style="background:var(--brand-soft);color:var(--brand)"><i class="ti ti-clipboard-check"></i></i>
+            <div><div class="ft">Cut sheet attached</div><div class="fv">Steer #418 · Half</div></div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-chrome">
+              <div class="panel-dots"><span></span><span></span><span></span></div>
+              <div class="panel-url"><i class="ti ti-lock"></i> app.butchercore.com/dashboard</div>
+            </div>
+            <div class="app-mini">
+              <aside class="app-side">
+                <div class="app-brand">
+                  <span class="brand-mark"><i class="ti ti-meat"></i></span>
+                  <div><b>Cedar Creek</b><br><small>MEAT CO.</small></div>
+                </div>
+                <div class="app-nav on"><i class="ti ti-layout-dashboard"></i> Dashboard</div>
+                <div class="app-nav"><i class="ti ti-calendar-event"></i> Kill schedule</div>
+                <div class="app-nav"><i class="ti ti-clipboard-list"></i> Cut orders <span class="n">6</span></div>
+                <div class="app-nav"><i class="ti ti-users"></i> Customers</div>
+                <div class="app-nav"><i class="ti ti-message-2"></i> Messages <span class="n">3</span></div>
+                <div class="app-nav"><i class="ti ti-chart-bar"></i> Reports</div>
+              </aside>
+              <div class="app-body">
+                <div class="app-topline">
+                  <b>Today on the floor</b>
+                  <span class="app-live"><span class="d"></span> Live</span>
+                </div>
+                <div class="kpi-row">
+                  <div class="kpi"><div class="kl"><i class="ti ti-calendar-event"></i> Kills / wk</div><div class="kv">8</div></div>
+                  <div class="kpi"><div class="kl"><i class="ti ti-alert-circle"></i> Unconfirmed</div><div class="kv warn">3</div></div>
+                  <div class="kpi"><div class="kl"><i class="ti ti-cash"></i> Revenue / mo</div><div class="kv">$18k</div></div>
+                </div>
+                <div class="mini-card">
+                  <div class="mini-head">Upcoming kill schedule</div>
+                  <table class="mini">
+                    <tr><td class="mini-strong">Mon · Jul 7</td><td>Kauffman Farm</td><td><span class="badge b-beef">Beef</span></td><td><span class="badge b-ok">Confirmed</span></td></tr>
+                    <tr><td class="mini-strong">Tue · Jul 8</td><td>R. Yoder</td><td><span class="badge b-pork">Pork</span></td><td><span class="badge b-warn">Call</span></td></tr>
+                    <tr><td class="mini-strong">Wed · Jul 9</td><td>Miller Cattle</td><td><span class="badge b-beef">Beef</span></td><td><span class="badge b-ok">Confirmed</span></td></tr>
+                    <tr><td class="mini-strong">Thu · Jul 10</td><td>Hillside Lamb</td><td><span class="badge b-lamb">Lamb</span></td><td><span class="badge b-warn">Call</span></td></tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST ============ -->
+<section class="trust">
+  <div class="wrap">
+    <p>One portal for every part of the shop</p>
+    <div class="trust-row">
+      <span class="trust-item"><i class="ti ti-calendar-event"></i> Kill schedule</span>
+      <span class="trust-item"><i class="ti ti-clipboard-list"></i> Cut sheets</span>
+      <span class="trust-item"><i class="ti ti-receipt"></i> Billing</span>
+      <span class="trust-item"><i class="ti ti-chart-bar"></i> Reports</span>
+      <span class="trust-item"><i class="ti ti-users"></i> Customers</span>
+      <span class="trust-item"><i class="ti ti-message-2"></i> Texting</span>
+      <span class="trust-item"><i class="ti ti-scale"></i> Tag &amp; weight</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEM / SOLUTION ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow center">Ditch the whiteboard</span>
+      <h2 class="h2">The clipboard and the shoebox weren't built for this.</h2>
+      <p>A whiteboard schedule, a drawer of paper cut sheets, and a phone that never stops ringing — one busy Saturday and it all falls apart. Butcher Core puts the whole operation in one place, so nothing gets lost between the scale and the pickup counter.</p>
+    </div>
+    <div class="grid-3">
+      <div class="fcard reveal">
+        <div class="ficon"><i class="ti ti-calendar-event"></i></div>
+        <h3>A schedule that can't get erased</h3>
+        <p>Book every animal in with the farmer, species, head count, deposit and pickup date. See the whole week — or a single day — and know exactly what's coming to the floor.</p>
+        <a href="#schedule" class="fcard-link">Kill scheduling <i class="ti ti-arrow-right"></i></a>
+      </div>
+      <div class="fcard reveal d1">
+        <div class="ficon"><i class="ti ti-clipboard-check"></i></div>
+        <h3>Cut sheets that match your shop</h3>
+        <p>Digital cut sheets for beef, pork, lamb, goat and deer — with your own cuts, thicknesses and package sizes. No more chasing an illegible order across the plant.</p>
+        <a href="#cutsheets" class="fcard-link">Cut sheets <i class="ti ti-arrow-right"></i></a>
+      </div>
+      <div class="fcard reveal d2">
+        <div class="ficon"><i class="ti ti-message-2"></i></div>
+        <h3>Text customers when it's ready</h3>
+        <p>Two-way texting straight from the portal — send "your beef is ready" and answer questions from a shared team inbox, without handing out anybody's cell number.</p>
+        <a href="#texting" class="fcard-link">Customer texting <i class="ti ti-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES OVERVIEW ============ -->
+<section class="section bg-paper2" id="features">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow center">Everything the shop needs</span>
+      <h2 class="h2">The whole operation, end to end.</h2>
+      <p>From the animal coming in to the invoice paid at the counter — Butcher Core now covers scheduling, cutting, <b>billing</b> and <b>reporting</b> in one portal. Jump to any piece below.</p>
+    </div>
+    <div class="grid-3">
+      <a class="fcard reveal" href="#schedule"><div class="ficon"><i class="ti ti-calendar-event"></i></div><h3>Kill schedule</h3><p>Book animals in, track confirmations and deposits, and view the whole week or a single day at a tap.</p><span class="fcard-link">Explore <i class="ti ti-arrow-right"></i></span></a>
+      <a class="fcard reveal d1" href="#cutsheets"><div class="ficon"><i class="ti ti-clipboard-check"></i></div><h3>Cut sheets</h3><p>Customizable digital cut sheets per species, with a live status pipeline from taken to paid.</p><span class="fcard-link">Explore <i class="ti ti-arrow-right"></i></span></a>
+      <a class="fcard reveal d2" href="#history"><div class="ficon"><i class="ti ti-history"></i></div><h3>Cut-sheet history</h3><p>Pull up a customer's past sheets in seconds and text them a photo to confirm before you cut.</p><span class="fcard-link">Explore <i class="ti ti-arrow-right"></i></span></a>
+      <a class="fcard reveal" href="#billing"><div class="ficon"><i class="ti ti-receipt"></i></div><h3>Billing &amp; invoices <span class="badge b-ok" style="vertical-align:middle;font-size:9px">New</span></h3><p>Per-pound rate cards, sales tax, and invoices that build themselves from the cut sheet — draft to paid.</p><span class="fcard-link">Explore <i class="ti ti-arrow-right"></i></span></a>
+      <a class="fcard reveal d1" href="#reports"><div class="ficon"><i class="ti ti-chart-bar"></i></div><h3>Reports <span class="badge b-ok" style="vertical-align:middle;font-size:9px">New</span></h3><p>Animals butchered, revenue, collected vs. outstanding, by animal, month and top farmer — any date range.</p><span class="fcard-link">Explore <i class="ti ti-arrow-right"></i></span></a>
+      <a class="fcard reveal d2" href="#texting"><div class="ficon"><i class="ti ti-message-2"></i></div><h3>Two-way texting</h3><p>Reach customers from a shared inbox on your shop's own number — order-ready alerts, replies and photos.</p><span class="fcard-link">Explore <i class="ti ti-arrow-right"></i></span></a>
+      <a class="fcard field reveal" href="#customers"><div class="ficon"><i class="ti ti-users"></i></div><h3>Customers &amp; farmers</h3><p>A tidy record of who brings animals and who buys meat, with history and contact info on one screen.</p><span class="fcard-link">Explore <i class="ti ti-arrow-right"></i></span></a>
+      <a class="fcard field reveal d1" href="#security"><div class="ficon"><i class="ti ti-building-store"></i></div><h3>Multi-shop &amp; roles</h3><p>Run one shop or many, each walled off with its own name, logo, staff and secure logins.</p><span class="fcard-link">Explore <i class="ti ti-arrow-right"></i></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPOTLIGHT: cut-sheet history ============ -->
+<section class="section" id="history">
+  <div class="wrap">
+    <div class="spotlight-card reveal">
+      <div class="spotlight-copy">
+        <span class="spot-star"><i class="ti ti-star-filled"></i> Shop favorite</span>
+        <h2>Repeat customer? Pull up last year in seconds.</h2>
+        <p>Most folks want it "the same as last time." Butcher Core keeps every cut sheet a customer has ever ordered — type their name and the whole history is right there. Reuse it as-is, tweak it, and text them a picture of the sheet to confirm before you make a single cut.</p>
+        <ul class="flist">
+          <li><i class="ti ti-check"></i> Every past cut sheet on the customer's record, searchable in a tap</li>
+          <li><i class="ti ti-check"></i> Duplicate last year's order instead of re-writing it</li>
+          <li><i class="ti ti-check"></i> Text an image of the old sheet — "same as last time?" — for their OK</li>
+          <li><i class="ti ti-check"></i> No filing cabinet, no callback to double-check</li>
+        </ul>
+        <div style="margin-top:22px"><a href="#demo" class="btn btn-primary"><i class="ti ti-player-play"></i> Watch it in action</a></div>
+      </div>
+      <div class="spotlight-media">
+        <div style="width:100%;display:flex;flex-direction:column;gap:14px">
+          <div class="panel" style="box-shadow:var(--shadow-md)">
+            <div class="panel-chrome"><div class="panel-dots"><span></span><span></span><span></span></div><div class="panel-url">Dale Wenger · cut-sheet history</div></div>
+            <div style="padding:13px;background:var(--surface-2)">
+              <div class="mini-card">
+                <div class="mini-head" style="display:flex;justify-content:space-between">Previous cut sheets <span style="color:var(--ink-3);font-weight:600">4 on file</span></div>
+                <table class="mini">
+                  <tr><td class="mini-strong">2025 · Beef</td><td class="mini-mut">Steer · Half</td><td style="text-align:right"><span class="badge b-beef"><i class="ti ti-copy"></i> Reuse</span></td></tr>
+                  <tr><td class="mini-strong">2024 · Beef</td><td class="mini-mut">Steer · Half</td><td style="text-align:right"><span class="badge b-beef"><i class="ti ti-copy"></i> Reuse</span></td></tr>
+                  <tr><td class="mini-strong">2023 · Pork</td><td class="mini-mut">Whole hog</td><td style="text-align:right"><span class="badge b-pork"><i class="ti ti-copy"></i> Reuse</span></td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="mms-bubble">
+            <div class="mms-img">
+              <div class="mms-tag">CUT SHEET · BEEF · HALF — 2024</div>
+              <div class="mms-body">Ribeye 1¼" · T‑bone 1" · Chuck roast 3 lb · Ground 85/15 · Brisket whole</div>
+            </div>
+            <div class="mms-cap">Here's your sheet from last year — want it the same? 👍<small>Cedar Creek · sent ✓</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ANIMATED TEXT DEMO ============ -->
+<section class="section bg-surface" id="demo">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow center">See it in action</span>
+      <h2 class="h2">"Same as last year?" — sorted in a few texts.</h2>
+      <p>Watch a real intake: the shop texts a photo of last year's cut sheet, the customer replies with one tweak, and the order updates itself. No phone tag, no paper.</p>
+    </div>
+    <div class="demo-grid">
+      <!-- animated phone -->
+      <div class="phone">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="sms-header">
+            <span class="avatar-lg">DW</span>
+            <b>Dale Wenger</b>
+            <small>Customer · Beef half · texts to shop line</small>
+          </div>
+          <div class="sms-thread" data-sms-demo>
+            <div class="sms-msg out">
+              <div class="sms-bubble">Morning, Dale! You're booked for Thursday. Here's your cut sheet from last year 👇</div>
+            </div>
+            <div class="sms-msg out img">
+              <div class="sms-bubble">
+                <div class="cs-photo">
+                  <div class="cs-photo-head"><b>CEDAR CREEK — CUT SHEET</b><small>Dale Wenger · Beef · Half · 2024</small></div>
+                  <div class="cs-photo-body">
+                    <div class="cs-line"><b>Ribeye</b><span class="v">1¼" steaks</span></div>
+                    <div class="cs-line"><b>T‑bone</b><span class="v">1" steaks</span></div>
+                    <div class="cs-line"><b>Chuck</b><span class="v">3 lb roast</span></div>
+                    <div class="cs-line"><b>Ground</b><span class="v">85 / 15</span></div>
+                    <div class="cs-line"><b>Brisket</b><span class="v">Whole</span></div>
+                    <div class="cs-line"><b>Soup bones</b><span class="v">Yes</span></div>
+                  </div>
+                  <div class="cs-photo-foot"><i class="ti ti-photo"></i> PHOTO · SHEET_2024.JPG</div>
+                </div>
+              </div>
+              <div class="sms-time">Cedar Creek · 8:02 AM</div>
+            </div>
+            <div class="sms-msg in">
+              <div class="sms-bubble">Looks great! Just switch the ground to 90/10 this year and add 2 more chuck roasts 🙌</div>
+            </div>
+            <div class="sms-msg out">
+              <div class="sms-bubble">You got it 👍 Updated — ground 90/10, +2 chuck roasts. Everything else same as last year.</div>
+            </div>
+            <div class="sms-msg in">
+              <div class="sms-bubble">Perfect, thank you!</div>
+              <div class="sms-time">Dale · 8:05 AM</div>
+            </div>
+            <div class="sms-status"><span class="chip2"><i class="ti ti-clipboard-check"></i> Cut sheet updated &amp; confirmed</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- explainer -->
+      <div class="demo-steps reveal d1">
+        <div class="demo-step">
+          <span class="ds-num">1</span>
+          <div><b>Text last year's sheet</b><p>Pull up the customer's previous cut sheet and send it as a photo — one tap, right from their record.</p></div>
+        </div>
+        <div class="demo-step">
+          <span class="ds-num">2</span>
+          <div><b>They confirm or tweak</b><p>The customer just texts back "looks good" — or asks for a change, like ground 90/10 and a couple more roasts.</p></div>
+        </div>
+        <div class="demo-step">
+          <span class="ds-num">3</span>
+          <div><b>The sheet updates</b><p>Apply the change, mark it confirmed, and the order's locked in for Thursday — no re-writing, no callback.</p></div>
+        </div>
+        <button class="btn demo-replay"><i class="ti ti-refresh"></i> Replay the exchange</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CUT SHEETS ============ -->
+<section class="section" id="cutsheets">
+  <div class="wrap">
+    <div class="split">
+      <div class="split-copy reveal">
+        <span class="eyebrow">Cut sheets, built your way</span>
+        <h2>Every cut, every thickness, every package — exactly how your shop does it.</h2>
+        <p>Start from proven beef and pork templates, then tune the fields for each species you handle. Add cuts, dropdowns, package sizes and special instructions. The order follows the animal from the rail to wrapping.</p>
+        <ul class="flist">
+          <li><i class="ti ti-check"></i> Per-species forms for beef, pork, lamb, goat &amp; deer</li>
+          <li><i class="ti ti-check"></i> Drag a cut sheet onto a carcass — works on the iPad on the floor</li>
+          <li><i class="ti ti-check"></i> Whole / half / quarter portions with the right yield math</li>
+          <li><i class="ti ti-check"></i> Status pipeline: taken → cutting → ready → paid</li>
+          <li><i class="ti ti-check"></i> Records which staff member submitted each sheet</li>
+        </ul>
+      </div>
+      <div class="split-media reveal d2">
+        <div class="panel">
+          <div class="panel-chrome">
+            <div class="panel-dots"><span></span><span></span><span></span></div>
+            <div class="panel-url">Cut order · Beef · Half</div>
+          </div>
+          <div style="padding:20px;background:var(--surface-2)">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+              <div>
+                <div style="font-family:var(--display);font-weight:600;font-size:18px">Dale Wenger</div>
+                <div style="font-size:12px;color:var(--ink-3)">Steer #418 · pickup Fri Jul 11</div>
+              </div>
+              <span class="badge b-beef" style="font-size:11px">BEEF · HALF</span>
+            </div>
+            <div class="mini-card" style="margin-bottom:12px">
+              <div class="mini-head">Steaks &amp; roasts</div>
+              <table class="mini">
+                <tr><td class="mini-strong">Ribeye</td><td class="mini-mut">Steaks · 2 per pack</td><td style="text-align:right"><span class="badge b-ok">1¼"</span></td></tr>
+                <tr><td class="mini-strong">T‑bone</td><td class="mini-mut">Steaks · 2 per pack</td><td style="text-align:right"><span class="badge b-ok">1"</span></td></tr>
+                <tr><td class="mini-strong">Chuck</td><td class="mini-mut">Roast</td><td style="text-align:right"><span class="badge b-ok">3 lb</span></td></tr>
+                <tr><td class="mini-strong">Ground</td><td class="mini-mut">1 lb packages</td><td style="text-align:right"><span class="badge b-ok">85/15</span></td></tr>
+              </table>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;padding:11px 13px;border:1.5px dashed var(--brand-line);border-radius:11px;background:var(--brand-soft);font-size:12.5px;font-weight:700;color:var(--brand-700)"><i class="ti ti-hand-move" style="font-size:18px"></i> Drag sheet onto Steer #418 to attach</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KILL SCHEDULE ============ -->
+<section class="section bg-surface" id="schedule">
+  <div class="wrap">
+    <div class="split rev">
+      <div class="split-copy reveal d2">
+        <span class="eyebrow">Kill &amp; slaughter schedule</span>
+        <h2>Know exactly what's coming to the floor.</h2>
+        <p>Book every animal in with the farmer, species, head count, deposit and pickup date. Confirm dates, flag who still needs a call, and mark deposits paid — all in one view.</p>
+        <ul class="flist">
+          <li><i class="ti ti-check"></i> Week list or a By-day calendar — a whole day at a tap</li>
+          <li><i class="ti ti-check"></i> Confirmation &amp; deposit tracking so nothing slips</li>
+          <li><i class="ti ti-check"></i> Sorted by kill date, farmer and species at a glance</li>
+          <li><i class="ti ti-check"></i> Every kill links straight to its cut orders</li>
+        </ul>
+      </div>
+      <div class="split-media reveal">
+        <div class="panel">
+          <div class="panel-chrome"><div class="panel-dots"><span></span><span></span><span></span></div><div class="panel-url">Kill schedule · this week</div></div>
+          <div style="padding:16px;background:var(--surface-2)">
+            <div class="mini-card">
+              <div class="mini-head" style="display:flex;justify-content:space-between">Upcoming kills <span style="color:var(--ink-3);font-weight:600">8 scheduled</span></div>
+              <table class="mini">
+                <tr><td class="mini-strong">Mon Jul 7</td><td>Kauffman Farm</td><td><span class="badge b-beef">Beef</span></td><td class="mini-mut">2 hd</td><td style="text-align:right"><span class="badge b-ok">Confirmed</span></td></tr>
+                <tr><td class="mini-strong">Tue Jul 8</td><td>R. Yoder</td><td><span class="badge b-pork">Pork</span></td><td class="mini-mut">4 hd</td><td style="text-align:right"><span class="badge b-warn">Call</span></td></tr>
+                <tr><td class="mini-strong">Wed Jul 9</td><td>Miller Cattle</td><td><span class="badge b-beef">Beef</span></td><td class="mini-mut">1 hd</td><td style="text-align:right"><span class="badge b-ok">Confirmed</span></td></tr>
+                <tr><td class="mini-strong">Thu Jul 10</td><td>Hillside Lamb</td><td><span class="badge b-lamb">Lamb</span></td><td class="mini-mut">6 hd</td><td style="text-align:right"><span class="badge b-warn">Call</span></td></tr>
+                <tr><td class="mini-strong">Fri Jul 11</td><td>Troyer Bros.</td><td><span class="badge b-beef">Beef</span></td><td class="mini-mut">3 hd</td><td style="text-align:right"><span class="badge b-ok">Confirmed</span></td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TAG & WEIGHT ============ -->
+<section class="section" id="tagweight">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow center">Per-head tag &amp; weight</span>
+      <h2 class="h2">Track every carcass on its own line.</h2>
+      <p>A kill isn't one number — it's individual animals. Butcher Core tracks each head separately, so the tag, hanging weight and cut sheet all live together.</p>
+    </div>
+    <div class="grid-3">
+      <div class="fcard reveal"><div class="ficon"><i class="ti ti-tag"></i></div><h3>Tag number</h3><p>Label each head as it comes off the rail so the right meat goes to the right customer, every time.</p></div>
+      <div class="fcard reveal d1"><div class="ficon"><i class="ti ti-scale"></i></div><h3>Hanging weight</h3><p>Record the weight per animal — the basis for yield, pricing and the customer conversation.</p></div>
+      <div class="fcard reveal d2"><div class="ficon"><i class="ti ti-clipboard-check"></i></div><h3>Sheet attached</h3><p>A head is marked complete once it has a weight and an attached cut sheet — no half-finished jobs slipping by.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BILLING & INVOICES ============ -->
+<section class="section bg-surface" id="billing">
+  <div class="wrap">
+    <div class="split">
+      <div class="split-copy reveal">
+        <span class="feature-tag brand"><i class="ti ti-sparkles"></i> New</span>
+        <h2 style="margin-top:14px">The invoice builds itself from the cut sheet.</h2>
+        <p>Set your per-pound and flat rates once. When a cut sheet picks "hot dogs" or "vacuum seal," Butcher Core drops the matching line onto the invoice automatically — priced off the finished hanging weight. Add sales tax, finalize, and the amounts are locked. No adding-machine tape, no math on the back of the sheet.</p>
+        <ul class="flist">
+          <li><i class="ti ti-check"></i> A rate card by meat type &amp; processing option — per pound or flat fee</li>
+          <li><i class="ti ti-check"></i> Picking an option on a cut sheet auto-adds its billing line</li>
+          <li><i class="ti ti-check"></i> Per-pound lines price off the real hanging weight; sales tax handled</li>
+          <li><i class="ti ti-check"></i> Finalizing <b>snapshots the rate</b> — changing prices later never rewrites an old invoice</li>
+          <li><i class="ti ti-check"></i> Status runs draft → finalized → paid, with collected vs. outstanding tracked</li>
+        </ul>
+      </div>
+      <div class="split-media reveal d2">
+        <div class="panel bill-demo" data-bill-demo data-total-cents="25400">
+          <div class="panel-chrome"><div class="panel-dots"><span></span><span></span><span></span></div><div class="panel-url">Invoice · Dale Wenger</div></div>
+          <div class="bill-head">
+            <div><div class="bh-name">Invoice #1042</div><div class="bh-sub">Dale Wenger · Steer #418 · Beef half</div></div>
+            <span class="bill-status-pill" data-bill-status><i class="ti ti-pencil"></i> Draft</span>
+          </div>
+          <div class="bill-body">
+            <div class="bill-lines">
+              <div class="bill-line">
+                <div><div class="bl-main">Beef cut &amp; wrap</div><div class="bl-meta">214 lb × $0.95 / lb</div></div>
+                <div class="bl-amt">$203.30</div>
+              </div>
+              <div class="bill-line auto">
+                <div><div class="bl-main">Smoked hot dogs <span class="bl-chip"><i class="ti ti-bolt"></i> Auto from cut sheet</span></div><div class="bl-meta">12 lb × $0.85 / lb</div></div>
+                <div class="bl-amt">$10.20</div>
+              </div>
+              <div class="bill-line">
+                <div><div class="bl-main">Cure &amp; vacuum seal</div><div class="bl-meta">Flat fee</div></div>
+                <div class="bl-amt">$25.00</div>
+              </div>
+            </div>
+            <div class="bill-sum">
+              <div class="bill-sumrow"><span>Subtotal</span><span class="v">$238.50</span></div>
+              <div class="bill-sumrow"><span>Sales tax · 6.5%</span><span class="v">$15.50</span></div>
+              <div class="bill-sumrow total"><span>Total due</span><span class="v" data-bill-total>$0.00</span></div>
+            </div>
+            <div class="bill-steps">
+              <span class="bstep active" data-step="draft"><i class="ti ti-pencil"></i> Draft</span>
+              <i class="ti ti-chevron-right bill-arrow"></i>
+              <span class="bstep" data-step="finalized"><i class="ti ti-lock"></i> Finalized</span>
+              <i class="ti ti-chevron-right bill-arrow"></i>
+              <span class="bstep" data-step="paid"><i class="ti ti-cash"></i> Paid</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REPORTS ============ -->
+<section class="section bg-paper2" id="reports">
+  <div class="wrap">
+    <div class="split rev">
+      <div class="split-copy reveal d2">
+        <span class="feature-tag"><i class="ti ti-sparkles"></i> New</span>
+        <h2 style="margin-top:14px">Finally, the numbers behind the season.</h2>
+        <p>Every kill and every invoice rolls up into plain-English reports. See how many animals you butchered, what you billed, what you've actually collected, and where it came from — by animal, by month, by farmer — for any date range you pick. No spreadsheet exports, no guessing at year-end.</p>
+        <ul class="flist">
+          <li><i class="ti ti-check"></i> Animals butchered, revenue, collected vs. outstanding &amp; average $/animal</li>
+          <li><i class="ti ti-check"></i> Breakdowns by animal, by month and your top farmers</li>
+          <li><i class="ti ti-check"></i> Invoices grouped by status, so you know what's still owed</li>
+          <li><i class="ti ti-check"></i> Any range — last week to all-time, or a custom start and end</li>
+        </ul>
+      </div>
+      <div class="split-media reveal">
+        <div class="panel">
+          <div class="panel-chrome"><div class="panel-dots"><span></span><span></span><span></span></div><div class="panel-url">Reports · this year</div></div>
+          <div style="padding:16px;background:var(--surface-2)">
+            <div class="report-demo" data-report>
+              <div class="rep-kpis">
+                <div class="rep-kpi"><div class="rk-l"><i class="ti ti-cooker"></i> Animals</div><div class="rk-v"><span data-count="142">0</span></div><div class="rk-s">butchered this year</div></div>
+                <div class="rep-kpi"><div class="rk-l"><i class="ti ti-cash"></i> Revenue</div><div class="rk-v"><span data-count="48250" data-count-prefix="$">$0</span></div><div class="rk-s">finalized + paid</div></div>
+                <div class="rep-kpi"><div class="rk-l"><i class="ti ti-checks"></i> Collected</div><div class="rk-v field-c"><span data-count="44100" data-count-prefix="$">$0</span></div><div class="rk-s">$4,150 outstanding</div></div>
+                <div class="rep-kpi"><div class="rk-l"><i class="ti ti-scale"></i> Avg / animal</div><div class="rk-v"><span data-count="340" data-count-prefix="$">$0</span></div><div class="rk-s">across all species</div></div>
+              </div>
+              <div class="rep-chart">
+                <div class="rep-chart-head"><b>Revenue by animal</b><span>this year</span></div>
+                <div class="rep-rows">
+                  <div class="rep-row"><span class="rr-l"><span class="badge b-beef">Beef</span></span><span class="rr-track"><span class="rr-bar" data-w="100"></span></span><span class="rr-v">$31.2k</span></div>
+                  <div class="rep-row"><span class="rr-l"><span class="badge b-pork">Pork</span></span><span class="rr-track"><span class="rr-bar" data-w="31"></span></span><span class="rr-v">$9.8k</span></div>
+                  <div class="rep-row"><span class="rr-l"><span class="badge b-lamb">Lamb</span></span><span class="rr-track"><span class="rr-bar" data-w="13"></span></span><span class="rr-v">$4.2k</span></div>
+                  <div class="rep-row"><span class="rr-l"><span class="badge b-warn">Goat</span></span><span class="rr-track"><span class="rr-bar" data-w="6"></span></span><span class="rr-v">$1.9k</span></div>
+                  <div class="rep-row"><span class="rr-l"><span class="badge b-warn">Deer</span></span><span class="rr-track"><span class="rr-bar" data-w="4"></span></span><span class="rr-v">$1.2k</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CUSTOMERS & FARMERS ============ -->
+<section class="section bg-surface" id="customers">
+  <div class="wrap">
+    <div class="split">
+      <div class="split-copy reveal">
+        <span class="eyebrow">Customers &amp; farmers</span>
+        <h2>The people side of the shop, kept straight.</h2>
+        <p>A tidy record of who brings animals in and who buys the meat — with contact info, history and their orders on one screen. Farmers link to their kills; customers link to their cut sheets.</p>
+        <ul class="flist">
+          <li><i class="ti ti-check"></i> Full customer &amp; farmer directories, searchable</li>
+          <li><i class="ti ti-check"></i> Phone numbers normalized automatically</li>
+          <li><i class="ti ti-check"></i> Every order and kill tied back to the person</li>
+          <li><i class="ti ti-check"></i> One click to text or call from the record</li>
+        </ul>
+      </div>
+      <div class="split-media reveal d2">
+        <div class="panel">
+          <div class="panel-chrome"><div class="panel-dots"><span></span><span></span><span></span></div><div class="panel-url">Customers</div></div>
+          <div style="padding:16px;background:var(--surface-2)">
+            <div class="mini-card">
+              <div class="mini-head" style="display:flex;justify-content:space-between">Directory <span style="color:var(--ink-3);font-weight:600">142 customers</span></div>
+              <table class="mini">
+                <tr><td class="mini-strong">Dale Wenger</td><td class="mini-mut">(330) 555‑0148</td><td style="text-align:right"><span class="badge b-beef">3 orders</span></td></tr>
+                <tr><td class="mini-strong">Marie Schmidt</td><td class="mini-mut">(330) 555‑0192</td><td style="text-align:right"><span class="badge b-pork">1 order</span></td></tr>
+                <tr><td class="mini-strong">John Byler</td><td class="mini-mut">(330) 555‑0170</td><td style="text-align:right"><span class="badge b-ok">Paid</span></td></tr>
+                <tr><td class="mini-strong">Ruth Hostetler</td><td class="mini-mut">(330) 555‑0133</td><td style="text-align:right"><span class="badge b-lamb">2 orders</span></td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEXTING ============ -->
+<section class="section bg-paper2" id="texting">
+  <div class="wrap">
+    <div class="split rev">
+      <div class="split-copy reveal d2">
+        <span class="eyebrow">Two-way texting</span>
+        <h2>The phone stops ringing off the hook.</h2>
+        <p>Customers text <b>your shop's own number</b> and your whole team answers from one shared inbox. Send "your order's ready," confirm a kill date, or fire off deposit reminders — no personal cell numbers, no missed messages.</p>
+        <ul class="flist">
+          <li><i class="ti ti-check"></i> Your own number — each shop sends from its own Twilio account, nothing shared</li>
+          <li><i class="ti ti-check"></i> Shared inbox — the office, not somebody's phone</li>
+          <li><i class="ti ti-check"></i> "Order ready" &amp; pickup reminders in a tap</li>
+          <li><i class="ti ti-check"></i> Send a photo of the packaged order or cut sheet (MMS)</li>
+          <li><i class="ti ti-check"></i> Every text tied to the customer and their order</li>
+        </ul>
+      </div>
+      <div class="split-media reveal">
+        <div class="panel" style="max-width:400px;margin:0 auto">
+          <div class="panel-chrome">
+            <div class="panel-dots"><span></span><span></span><span></span></div>
+            <div class="panel-url">Messages · Dale Wenger</div>
+          </div>
+          <div style="padding:18px;background:var(--surface-2);display:flex;flex-direction:column;gap:12px">
+            <div style="align-self:flex-start;max-width:78%;background:var(--surface);border:1px solid var(--border);border-radius:14px 14px 14px 4px;padding:10px 13px;font-size:13px;box-shadow:var(--shadow-sm)">
+              Hey — is my beef done? Hoping to grab it this weekend.
+              <div style="font-size:10px;color:var(--ink-3);margin-top:4px">Dale · 9:12 AM</div>
+            </div>
+            <div style="align-self:flex-end;max-width:80%;background:var(--brand);color:#fff;border-radius:14px 14px 4px 14px;padding:10px 13px;font-size:13px;box-shadow:0 3px 10px rgba(155,46,38,.25)">
+              All wrapped and ready! Steer #418, half — 214 lbs packaged. Pick up any time before 5.
+              <div style="font-size:10px;color:rgba(255,255,255,.75);margin-top:4px">Cedar Creek · 9:14 AM ✓</div>
+            </div>
+            <div style="align-self:flex-start;max-width:78%;background:var(--surface);border:1px solid var(--border);border-radius:14px 14px 14px 4px;padding:10px 13px;font-size:13px;box-shadow:var(--shadow-sm)">
+              Perfect, thank you! See you Saturday. 🙌
+              <div style="font-size:10px;color:var(--ink-3);margin-top:4px">Dale · 9:15 AM</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border-strong);border-radius:12px;padding:9px 12px;color:var(--ink-3);font-size:12.5px">
+              <i class="ti ti-message" style="font-size:16px"></i> Message the shop…
+              <span style="margin-left:auto;width:28px;height:28px;border-radius:8px;background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center"><i class="ti ti-send" style="font-size:15px"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MULTI-SHOP / SECURITY ============ -->
+<section class="section" id="security">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow center">Multi-shop, roles &amp; security</span>
+      <h2 class="h2">Run one shop or a dozen — each walled off tight.</h2>
+      <p>Butcher Core is multi-tenant from the ground up. Every shop is its own space with its own name, logo, staff and data — no one sees another company's records.</p>
+    </div>
+    <div class="grid-3" style="margin-bottom:34px">
+      <div class="fcard field reveal"><div class="ficon"><i class="ti ti-building-store"></i></div><h3>Your shop, your brand</h3><p>Each company gets its own name and logo across the portal, and its own animals and cut-sheet fields.</p></div>
+      <div class="fcard reveal d1"><div class="ficon"><i class="ti ti-shield-lock"></i></div><h3>Locked-down data</h3><p>Nothing is readable or writable without a staff login. Row-level security enforces separation in the database itself.</p></div>
+      <div class="fcard reveal d2"><div class="ficon"><i class="ti ti-user-shield"></i></div><h3>Roles that fit the shop</h3><p>Admin and office roles decide who can change staff and settings versus who just runs the day.</p></div>
+    </div>
+    <div class="secure-grid">
+      <div class="secure reveal"><i class="ti ti-refresh"></i><div><b>Real-time everywhere</b><p>Edits sync instantly across the office and the floor — no refresh, no stale copy of the truth.</p></div></div>
+      <div class="secure reveal d1"><i class="ti ti-device-tablet"></i><div><b>Works on any device</b><p>Desk browser, the tablet by the scale, or a phone — touch drag-and-drop included on iPad and iPhone.</p></div></div>
+      <div class="secure reveal d2"><i class="ti ti-file-import"></i><div><b>Bring your records</b><p>Import your existing customers, farmers, cut sheets and kills from CSV, with header auto-mapping.</p></div></div>
+      <div class="secure reveal d3"><i class="ti ti-cloud-check"></i><div><b>Nothing to install</b><p>It's a web portal — open a link and sign in. No servers to babysit, backups handled for you.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MORE / RUNS THE BUSINESS ============ -->
+<section class="section" id="more">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow center">The details that make it stick</span>
+      <h2 class="h2">Find anything, brand it yours, make it fit.</h2>
+      <p>Beyond the big features, the little things are what get a shop to actually use it every day.</p>
+    </div>
+    <div class="reveal" style="margin-bottom:38px">
+      <div class="omni" data-omni data-query="Dale Wenger">
+        <div class="omni-bar">
+          <i class="ti ti-search mag"></i>
+          <div class="omni-q" data-omni-q></div>
+          <span class="omni-kbd">⌘K</span>
+        </div>
+        <div class="omni-scope">Searching customers · farmers · orders · kills</div>
+        <div class="omni-res">
+          <span class="or-ic"><i class="ti ti-user"></i></span>
+          <div><div class="or-t">Dale Wenger</div><div class="or-s">(330) 555‑0148 · 3 orders</div></div>
+          <span class="or-kind">Customer</span>
+        </div>
+        <div class="omni-res">
+          <span class="or-ic"><i class="ti ti-clipboard-list"></i></span>
+          <div><div class="or-t">Steer #418 — Beef half</div><div class="or-s">Cut order · pickup Fri Jul 11</div></div>
+          <span class="or-kind">Order</span>
+        </div>
+        <div class="omni-res">
+          <span class="or-ic field"><i class="ti ti-tractor"></i></span>
+          <div><div class="or-t">Dale Kauffman</div><div class="or-s">Farmer · 6 kills booked</div></div>
+          <span class="or-kind">Farmer</span>
+        </div>
+      </div>
+      <p style="text-align:center;font-size:.9rem;color:var(--ink-3);margin-top:14px">Hit <b>⌘K</b> from any screen — customers, farmers, orders and kills, all in one search.</p>
+    </div>
+    <div class="mini-feat">
+      <div class="mfcard reveal">
+        <div class="mf-ic"><i class="ti ti-search"></i></div>
+        <h4>Global search</h4>
+        <p>One box finds any customer, farmer, order or kill across the whole portal — no clicking through menus.</p>
+      </div>
+      <div class="mfcard field reveal d1">
+        <div class="mf-ic"><i class="ti ti-building-store"></i></div>
+        <h4>Your name &amp; logo</h4>
+        <p>Set your business name and logo once — it shows in the sidebar, on the dashboard, and on printed &amp; texted cut sheets.</p>
+      </div>
+      <div class="mfcard reveal d2">
+        <div class="mf-ic"><i class="ti ti-forms"></i></div>
+        <h4>Cut sheets your way</h4>
+        <p>Design each species' form — add fields, dropdowns, free-text and choose-any chips, with a live preview.</p>
+      </div>
+      <div class="mfcard field reveal d3">
+        <div class="mf-ic"><i class="ti ti-adjustments"></i></div>
+        <h4>Statuses that fit</h4>
+        <p>Rename and reorder the kill and order stages to match how your shop actually moves a job across the floor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORKFLOW ============ -->
+<section class="section bg-surface" id="how">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow center">How it flows</span>
+      <h2 class="h2">From drop-off to pickup, one clean line.</h2>
+      <p>The same record follows the animal through the whole plant — no re-keying, no lost paper, no guessing.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="step-num">1</div><i class="ti ti-tractor step-ico"></i><h4>Book the kill</h4><p>Schedule the animal with the farmer, species and deposit.</p></div>
+      <div class="step reveal d1"><div class="step-num">2</div><i class="ti ti-clipboard-list step-ico"></i><h4>Take the order</h4><p>The customer's cut sheet is filled in and saved to the job.</p></div>
+      <div class="step reveal d2"><div class="step-num">3</div><i class="ti ti-scale step-ico"></i><h4>Tag &amp; weigh</h4><p>Each head is tagged and weighed, sheet attached to the carcass.</p></div>
+      <div class="step reveal d3"><div class="step-num">4</div><i class="ti ti-tools-kitchen-2 step-ico"></i><h4>Cut &amp; wrap</h4><p>The floor works from the digital sheet; status moves to ready.</p></div>
+      <div class="step reveal d4"><div class="step-num">5</div><i class="ti ti-message-2-check step-ico"></i><h4>Text it's ready</h4><p>The customer gets a text on your shop's number and comes in.</p></div>
+      <div class="step reveal d4"><div class="step-num">6</div><i class="ti ti-receipt step-ico"></i><h4>Bill &amp; collect</h4><p>The invoice tallies from the sheet; mark it paid — it lands in reports.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS BAND ============ -->
+<section class="band">
+  <div class="wrap">
+    <div class="band-grid">
+      <div class="stat reveal"><div class="num"><span data-count="5">0</span></div><div class="cap">Species handled —<br>beef, pork, lamb, goat &amp; deer</div></div>
+      <div class="stat reveal d1"><div class="num">1</div><div class="cap">Portal for the whole<br>shop, live for every hand</div></div>
+      <div class="stat reveal d2"><div class="num">0</div><div class="cap">Cut sheets lost<br>between rail and wrap</div></div>
+      <div class="stat reveal d3"><div class="num">24<small>/7</small></div><div class="cap">Open on any device —<br>desk, tablet or phone</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta">
+  <div class="wrap">
+    <h2>Ready to get the shop off paper?</h2>
+    <p>See Butcher Core running with your own species, cuts and workflow. A quick demo, no pressure — just the fastest look at what one portal can do for your plant.</p>
+    <div class="cta-btns">
+      <a href="contact.html" class="btn btn-light btn-lg"><i class="ti ti-calendar-check"></i> Book a demo</a>
+      <a href="pricing.html" class="btn btn-outline-light btn-lg"><i class="ti ti-tag"></i> See pricing</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="brand foot-mark" aria-label="Butcher Core home">
+          <span class="brand-mark"><i class="ti ti-meat"></i></span>
+          <span class="brand-name">Butcher<b> Core</b></span>
+        </a>
+        <p>Operations software for meat processors and custom butcher shops — kill schedule, cut sheets, customers and farmers, in one portal built on the floor.</p>
+        <a href="https://vidultra.com" class="foot-by" target="_blank" rel="noopener"><span>A brand by</span> VidUltra <i class="ti ti-external-link"></i></a>
+      </div>
+      <div class="foot-col">
+        <h5>Features</h5>
+        <a href="#schedule">Kill schedule</a>
+        <a href="#cutsheets">Cut sheets</a>
+        <a href="#billing">Billing &amp; invoices</a>
+        <a href="#reports">Reports</a>
+        <a href="#texting">Texting</a>
+        <a href="#security">Multi-shop &amp; security</a>
+      </div>
+      <div class="foot-col">
+        <h5>Company</h5>
+        <a href="#top">Home</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html">Book a demo</a>
+        <a href="https://app.butchercore.com">Sign in</a>
+      </div>
+      <div class="foot-col">
+        <h5>Get in touch</h5>
+        <a href="mailto:justin@vidultra.com">justin@vidultra.com</a>
+        <a href="tel:2345676797">Call / Text · 234.567.6797</a>
+        <a href="https://vidultra.com" target="_blank" rel="noopener">vidultra.com</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> Butcher Core — a brand by <a href="https://vidultra.com" target="_blank" rel="noopener">VidUltra LLC</a></span>
+      <span class="fb-links">
+        <a href="#features">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js?v=5"></script>
+</body>
+</html>
