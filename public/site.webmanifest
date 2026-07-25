@@ -2,14 +2,15 @@
   "name": "Butcher Core — software for butchers",
   "short_name": "Butcher Core",
   "description": "Operations software for meat processors and custom butcher shops — kill schedule, cut sheets, butcher view, billing, texting and reports in one portal.",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": ".",
+  "scope": ".",
   "display": "standalone",
   "background_color": "#F4F0E7",
   "theme_color": "#9B2E26",
+  "_comment": "Paths are relative so they resolve against the manifest's own URL — correct both at the site root (butchercore.com) and under a subpath (the GitHub Pages copy at /butchercore-site/).",
   "icons": [
-    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
-    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
   ]
 }
