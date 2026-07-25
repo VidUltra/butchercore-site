@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Butcher Core — Operations software for meat processors &amp; custom butcher shops</title>
-<meta name="description" content="Operations software for meat processors &amp; custom butcher shops — run your kill schedule, cut sheets, billing &amp; invoices, customer texting and reports in one portal. Beef, pork, lamb, goat &amp; deer.">
+<meta name="description" content="Operations software for meat processors &amp; custom butcher shops — run your kill schedule, cut days, cut sheets, the Butcher View cutting-floor screen, billing, counter sales, customer texting and reports in one portal. Beef, pork, lamb, goat &amp; deer.">
 <link rel="canonical" href="https://butchercore.com/">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="author" content="VidUltra LLC">
@@ -32,14 +32,15 @@
 <meta name="twitter:image" content="https://butchercore.com/og-image.png">
 <meta name="twitter:image:alt" content="Butcher Core — operations software for meat processors and custom butcher shops.">
 
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
 <link rel="preload" href="fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts/fonts.css">
 <link rel="stylesheet" href="fonts/tabler-icons.css?v=6">
-<link rel="stylesheet" href="styles.css?v=6">
+<link rel="stylesheet" href="styles.css?v=7">
 
 <!-- Structured data (schema.org / JSON-LD) -->
 <script type="application/ld+json">
@@ -76,17 +77,21 @@
       "operatingSystem": "Web browser (any device)",
       "url": "https://butchercore.com/",
       "image": "https://butchercore.com/og-image.png",
-      "description": "One portal for meat processors and custom butcher shops: kill & slaughter schedule, custom cut sheets for beef, pork, lamb, goat and deer, per-head tag & weight, billing and invoices, two-way customer texting, and reports.",
+      "description": "One portal for meat processors and custom butcher shops: kill & slaughter schedule, cut day calendar with per-species capacity, custom cut sheets for beef, pork, lamb, goat and deer, a Butcher View screen for the cutting floor, per-head tag & weight, billing, counter (POS) sales, two-way customer texting, and reports.",
       "featureList": [
         "Kill & slaughter schedule with deposits and confirmations",
-        "Custom digital cut sheets for beef, pork, lamb, goat & deer",
+        "Cut day calendar with per-species daily capacity limits",
+        "Custom digital cut sheets for beef, pork, lamb, goat & deer, plus your own animals",
+        "Butcher View — a cutting-floor screen with per-cut final weights, kill notes and storage location",
         "Cut-sheet history & reuse",
         "Per-head tag & weight tracking",
         "Billing, rate cards, sales tax & invoices",
+        "Counter (POS) sales not tied to a cut sheet",
         "Reports & analytics",
-        "Two-way customer texting from the shop's own number",
+        "Two-way customer texting from the shop's own number, with templates and after-hours auto-reply",
         "Customers & farmers directories",
-        "Multi-shop, roles & row-level security"
+        "Multi-shop, roles & row-level security",
+        "CSV import and full JSON/CSV export"
       ],
       "offers": {
         "@type": "Offer",
@@ -112,7 +117,7 @@
 <header class="site-header">
   <div class="wrap nav">
     <a href="#top" class="brand" aria-label="Butcher Core home">
-      <span class="brand-mark"><i class="ti ti-meat"></i></span>
+      <img class="brand-logo" src="Images/butchercorelogo.png" alt="" width="42" height="42" decoding="async">
       <span class="brand-text">
         <span class="brand-name">Butcher<b> Core</b></span>
         <span class="brand-by">by <b>VidUltra</b></span>
@@ -125,8 +130,11 @@
         <div class="nav-dd-menu">
           <a href="#schedule"><i class="ti ti-calendar-event"></i><span><b>Kill schedule</b><small>Bookings, deposits &amp; confirmations</small></span></a>
           <a href="#cutsheets"><i class="ti ti-clipboard-check"></i><span><b>Cut sheets</b><small>Custom forms, all 5 species</small></span></a>
+          <a href="#butcherview"><i class="ti ti-meat"></i><span><b>Butcher View</b><small>The whole cut day, one screen</small></span></a>
+          <a href="#cutdays"><i class="ti ti-calendar-check"></i><span><b>Cut days &amp; capacity</b><small>Never overbook a day again</small></span></a>
           <a href="#history"><i class="ti ti-history"></i><span><b>Cut-sheet history</b><small>Reuse &amp; text last year's sheet</small></span></a>
           <a href="#billing"><i class="ti ti-receipt"></i><span><b>Billing &amp; invoices</b><small>Rate cards, tax &amp; auto-billing</small></span></a>
+          <a href="#pos"><i class="ti ti-cash"></i><span><b>Counter sales</b><small>Walk-ins, off the cut sheet</small></span></a>
           <a href="#reports"><i class="ti ti-chart-bar"></i><span><b>Reports</b><small>Animals, dollars &amp; throughput</small></span></a>
           <a href="#texting"><i class="ti ti-message-2"></i><span><b>Customer texting</b><small>Your own number, shared inbox</small></span></a>
           <a href="#customers"><i class="ti ti-users"></i><span><b>Customers &amp; farmers</b><small>The people side, kept straight</small></span></a>
@@ -148,8 +156,11 @@
   <div class="mnav-group">Features</div>
   <a href="#schedule" class="mnav-sub">Kill schedule</a>
   <a href="#cutsheets" class="mnav-sub">Cut sheets</a>
+  <a href="#butcherview" class="mnav-sub">Butcher View</a>
+  <a href="#cutdays" class="mnav-sub">Cut days &amp; capacity</a>
   <a href="#history" class="mnav-sub">Cut-sheet history</a>
   <a href="#billing" class="mnav-sub">Billing &amp; invoices</a>
+  <a href="#pos" class="mnav-sub">Counter sales</a>
   <a href="#reports" class="mnav-sub">Reports</a>
   <a href="#texting" class="mnav-sub">Customer texting</a>
   <a href="#customers" class="mnav-sub">Customers &amp; farmers</a>
@@ -247,7 +258,9 @@
     <div class="trust-row">
       <span class="trust-item"><i class="ti ti-calendar-event"></i> Kill schedule</span>
       <span class="trust-item"><i class="ti ti-clipboard-list"></i> Cut sheets</span>
+      <span class="trust-item"><i class="ti ti-meat"></i> Butcher View</span>
       <span class="trust-item"><i class="ti ti-receipt"></i> Billing</span>
+      <span class="trust-item"><i class="ti ti-cash"></i> Counter sales</span>
       <span class="trust-item"><i class="ti ti-chart-bar"></i> Reports</span>
       <span class="trust-item"><i class="ti ti-users"></i> Customers</span>
       <span class="trust-item"><i class="ti ti-message-2"></i> Texting</span>
@@ -293,14 +306,17 @@
     <div class="sec-head reveal">
       <span class="eyebrow center">Everything the shop needs</span>
       <h2 class="h2">The whole operation, end to end.</h2>
-      <p>From the animal coming in to the invoice paid at the counter — Butcher Core now covers scheduling, cutting, <b>billing</b> and <b>reporting</b> in one portal. Jump to any piece below.</p>
+      <p>From the animal coming in to the invoice paid at the counter — Butcher Core covers scheduling, the <b>cutting floor</b>, billing, <b>counter sales</b> and reporting in one portal. Jump to any piece below.</p>
     </div>
     <div class="grid-3">
       <a class="fcard reveal" href="#schedule"><div class="ficon"><i class="ti ti-calendar-event"></i></div><h3>Kill schedule</h3><p>Book animals in, track confirmations and deposits, and view the whole week or a single day at a tap.</p><span class="fcard-link">Explore <i class="ti ti-arrow-right"></i></span></a>
       <a class="fcard reveal d1" href="#cutsheets"><div class="ficon"><i class="ti ti-clipboard-check"></i></div><h3>Cut sheets</h3><p>Customizable digital cut sheets per species, with a live status pipeline from taken to paid.</p><span class="fcard-link">Explore <i class="ti ti-arrow-right"></i></span></a>
-      <a class="fcard reveal d2" href="#history"><div class="ficon"><i class="ti ti-history"></i></div><h3>Cut-sheet history</h3><p>Pull up a customer's past sheets in seconds and text them a photo to confirm before you cut.</p><span class="fcard-link">Explore <i class="ti ti-arrow-right"></i></span></a>
-      <a class="fcard reveal" href="#billing"><div class="ficon"><i class="ti ti-receipt"></i></div><h3>Billing &amp; invoices <span class="badge b-ok" style="vertical-align:middle;font-size:9px">New</span></h3><p>Per-pound rate cards, sales tax, and invoices that build themselves from the cut sheet — draft to paid.</p><span class="fcard-link">Explore <i class="ti ti-arrow-right"></i></span></a>
-      <a class="fcard reveal d1" href="#reports"><div class="ficon"><i class="ti ti-chart-bar"></i></div><h3>Reports <span class="badge b-ok" style="vertical-align:middle;font-size:9px">New</span></h3><p>Animals butchered, revenue, collected vs. outstanding, by animal, month and top farmer — any date range.</p><span class="fcard-link">Explore <i class="ti ti-arrow-right"></i></span></a>
+      <a class="fcard reveal d2" href="#butcherview"><div class="ficon"><i class="ti ti-meat"></i></div><h3>Butcher View <span class="badge b-ok" style="vertical-align:middle;font-size:9px">New</span></h3><p>The cutting-floor screen — a whole day's kills and sheets in one scroll, with final weights recorded as you go.</p><span class="fcard-link">Explore <i class="ti ti-arrow-right"></i></span></a>
+      <a class="fcard reveal" href="#cutdays"><div class="ficon"><i class="ti ti-calendar-check"></i></div><h3>Cut days &amp; capacity <span class="badge b-ok" style="vertical-align:middle;font-size:9px">New</span></h3><p>Mark your real cut days and cap the head per species, so a day can't get overbooked out from under you.</p><span class="fcard-link">Explore <i class="ti ti-arrow-right"></i></span></a>
+      <a class="fcard reveal d1" href="#history"><div class="ficon"><i class="ti ti-history"></i></div><h3>Cut-sheet history</h3><p>Pull up a customer's past sheets in seconds and text them a photo to confirm before you cut.</p><span class="fcard-link">Explore <i class="ti ti-arrow-right"></i></span></a>
+      <a class="fcard reveal d2" href="#billing"><div class="ficon"><i class="ti ti-receipt"></i></div><h3>Billing &amp; invoices</h3><p>Per-pound rate cards, sales tax, and invoices that build themselves from the cut sheet — draft to paid.</p><span class="fcard-link">Explore <i class="ti ti-arrow-right"></i></span></a>
+      <a class="fcard reveal" href="#pos"><div class="ficon"><i class="ti ti-cash"></i></div><h3>Counter sales <span class="badge b-ok" style="vertical-align:middle;font-size:9px">New</span></h3><p>Ring up a walk-in that never had a cut sheet — own lines, same invoice run, same reports.</p><span class="fcard-link">Explore <i class="ti ti-arrow-right"></i></span></a>
+      <a class="fcard reveal d1" href="#reports"><div class="ficon"><i class="ti ti-chart-bar"></i></div><h3>Reports</h3><p>Animals butchered, revenue, collected vs. outstanding, by animal, month and top farmer — any date range.</p><span class="fcard-link">Explore <i class="ti ti-arrow-right"></i></span></a>
       <a class="fcard reveal d2" href="#texting"><div class="ficon"><i class="ti ti-message-2"></i></div><h3>Two-way texting</h3><p>Reach customers from a shared inbox on your shop's own number — order-ready alerts, replies and photos.</p><span class="fcard-link">Explore <i class="ti ti-arrow-right"></i></span></a>
       <a class="fcard field reveal" href="#customers"><div class="ficon"><i class="ti ti-users"></i></div><h3>Customers &amp; farmers</h3><p>A tidy record of who brings animals and who buys meat, with history and contact info on one screen.</p><span class="fcard-link">Explore <i class="ti ti-arrow-right"></i></span></a>
       <a class="fcard field reveal d1" href="#security"><div class="ficon"><i class="ti ti-building-store"></i></div><h3>Multi-shop &amp; roles</h3><p>Run one shop or many, each walled off with its own name, logo, staff and secure logins.</p><span class="fcard-link">Explore <i class="ti ti-arrow-right"></i></span></a>
@@ -473,6 +489,71 @@
   </div>
 </section>
 
+<!-- ============ BUTCHER VIEW ============ -->
+<section class="section bg-paper2" id="butcherview">
+  <div class="wrap">
+    <div class="split rev">
+      <div class="split-copy reveal d2">
+        <span class="feature-tag brand"><i class="ti ti-sparkles"></i> New</span>
+        <h2 style="margin-top:14px">Butcher View: the whole cut day on one screen.</h2>
+        <p>The floor doesn't want to click through menus with cold, wet hands. Butcher View lays out every kill for the day in one scroll — boxed by farmer, each customer's sheet underneath, tag and hanging weight right there. Write down what actually came off the saw next to what the customer ordered, and it saves itself as you type.</p>
+        <ul class="flist">
+          <li><i class="ti ti-check"></i> A whole day at once, or one kill on its own — every sheet in a single scroll</li>
+          <li><i class="ti ti-check"></i> <b>Kill notes ride along</b> — one note on the drop-off, repeated on every sheet under it</li>
+          <li><i class="ti ti-check"></i> Record final weight per cut against what they ordered, with a running total</li>
+          <li><i class="ti ti-check"></i> Tap a status to move a job along without leaving the screen</li>
+          <li><i class="ti ti-check"></i> Mark the <b>storage location</b> so the counter finds it at pickup</li>
+          <li><i class="ti ti-check"></i> Print every sheet for the day in one go</li>
+          <li><i class="ti ti-check"></i> Saves automatically — no Save button to forget mid-shift</li>
+        </ul>
+      </div>
+      <div class="split-media reveal">
+        <div class="panel bv-demo" data-bv data-total="114.0">
+          <div class="panel-chrome">
+            <div class="panel-dots"><span></span><span></span><span></span></div>
+            <div class="panel-url">Butcher View · Mon Jul 7</div>
+          </div>
+          <div class="bv-body">
+            <div class="bv-kill">
+              <div class="bv-killhead">
+                <span class="badge b-beef">Beef</span>
+                <span class="bv-farm">Kauffman Farm</span>
+                <span class="bv-day">2 head</span>
+              </div>
+
+              <div class="bv-note">
+                <i class="ti ti-alert-circle"></i>
+                <div><span class="bv-note-l">Kill note · shows on every sheet</span>
+                  <span class="bv-note-t">Hides go back to the farmer — do not send out.</span></div>
+              </div>
+
+              <div class="bv-sheet">
+                <span class="bv-cust">Dale Wenger</span>
+                <span class="badge b-field">Tag 418 · 712 lb</span>
+                <span class="bv-store"><i class="ti ti-map-pin"></i> Freezer 2 · Shelf B</span>
+              </div>
+
+              <div class="bv-grid">
+                <div class="bv-gh"><span>Cut category</span><span>Customer selection</span><span class="bv-w">Final lb</span></div>
+                <div class="bv-row"><span class="bv-cat">Ground beef</span><span class="bv-sel">85 / 15 · 1 lb packs</span><span class="bv-w" data-wt="48.5">—</span></div>
+                <div class="bv-row"><span class="bv-cat">Patties</span><span class="bv-sel">⅓ lb · 4 per pack</span><span class="bv-w" data-wt="22.0">—</span></div>
+                <div class="bv-row"><span class="bv-cat">Ribeye</span><span class="bv-sel">1¼" · 2 per pack</span><span class="bv-w" data-wt="31.5">—</span></div>
+                <div class="bv-row"><span class="bv-cat">Stew meat</span><span class="bv-sel">1 lb packs</span><span class="bv-w" data-wt="12.0">—</span></div>
+                <div class="bv-tot">Recorded <b><span data-bv-total>0.0</span> lb</b></div>
+              </div>
+
+              <div class="bv-foot">
+                <span class="bv-save" data-bv-save><i class="ti ti-cloud-check"></i> Saves automatically</span>
+                <span class="bv-status" data-bv-status><i class="ti ti-tools-kitchen-2"></i> Cutting</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ KILL SCHEDULE ============ -->
 <section class="section bg-surface" id="schedule">
   <div class="wrap">
@@ -502,6 +583,59 @@
                 <tr><td class="mini-strong">Fri Jul 11</td><td>Troyer Bros.</td><td><span class="badge b-beef">Beef</span></td><td class="mini-mut">3 hd</td><td style="text-align:right"><span class="badge b-ok">Confirmed</span></td></tr>
               </table>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CUT DAY CALENDAR & CAPACITY ============ -->
+<section class="section bg-paper2" id="cutdays">
+  <div class="wrap">
+    <div class="split">
+      <div class="split-copy reveal">
+        <span class="feature-tag brand"><i class="ti ti-sparkles"></i> New</span>
+        <h2 style="margin-top:14px">Stop overbooking the cooler.</h2>
+        <p>Mark which upcoming dates are actual cut days, and set how many head of each species you can handle on one. When a day is at its limit, you see it before you promise a farmer a slot you don't have — not after the trailer's already backing in.</p>
+        <ul class="flist">
+          <li><i class="ti ti-check"></i> Pick your cut days on a calendar — skip holidays and slow weeks</li>
+          <li><i class="ti ti-check"></i> Set a <b>max head per species</b> for a day, so beef and pork book independently</li>
+          <li><i class="ti ti-check"></i> Days at capacity flag themselves as you book</li>
+          <li><i class="ti ti-check"></i> Every cut order carries its cut day — and shows up if it hasn't got one</li>
+          <li><i class="ti ti-check"></i> Export your cut days to CSV any time</li>
+        </ul>
+      </div>
+      <div class="split-media reveal d2">
+        <div class="panel cd-demo" data-cutdays>
+          <div class="panel-chrome">
+            <div class="panel-dots"><span></span><span></span><span></span></div>
+            <div class="panel-url">Cut day calendar &amp; capacity</div>
+          </div>
+          <div class="cd-body">
+            <div class="cd-cal">
+              <div class="cd-month">July <span>Tap a date to make it a cut day</span></div>
+              <div class="cd-dow"><span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span></div>
+              <!-- weekday columns line up with the kill dates used elsewhere on this page:
+                   Mon Jul 7 · Tue Jul 8 · Wed Jul 9 · Thu Jul 10 · Fri Jul 11 -->
+              <div class="cd-days">
+                <span class="cd-day mut">29</span><span class="cd-day mut">30</span><span class="cd-day">1</span><span class="cd-day">2</span><span class="cd-day">3</span><span class="cd-day">4</span><span class="cd-day">5</span>
+                <span class="cd-day">6</span><span class="cd-day" data-cd="on">7</span><span class="cd-day">8</span><span class="cd-day" data-cd="full">9</span><span class="cd-day" data-cd="on">10</span><span class="cd-day">11</span><span class="cd-day">12</span>
+                <span class="cd-day">13</span><span class="cd-day" data-cd="on">14</span><span class="cd-day">15</span><span class="cd-day" data-cd="on">16</span><span class="cd-day" data-cd="on">17</span><span class="cd-day">18</span><span class="cd-day">19</span>
+                <span class="cd-day">20</span><span class="cd-day" data-cd="on">21</span><span class="cd-day">22</span><span class="cd-day" data-cd="on">23</span><span class="cd-day" data-cd="on">24</span><span class="cd-day">25</span><span class="cd-day">26</span>
+              </div>
+            </div>
+            <div class="cd-caps">
+              <div class="cd-cap">
+                <div class="cd-cap-top"><span><span class="badge b-beef">Beef</span> Wed Jul 9</span><span class="cd-cap-n at">8 / 8</span></div>
+                <span class="cd-track"><span class="cd-fill at" data-cdw="100"></span></span>
+              </div>
+              <div class="cd-cap">
+                <div class="cd-cap-top"><span><span class="badge b-pork">Pork</span> Wed Jul 9</span><span class="cd-cap-n">5 / 12</span></div>
+                <span class="cd-track"><span class="cd-fill" data-cdw="42"></span></span>
+              </div>
+            </div>
+            <div class="cd-note"><i class="ti ti-alert-circle"></i> Beef is full on Jul 9 — book the next open cut day.</div>
           </div>
         </div>
       </div>
@@ -582,6 +716,59 @@
   </div>
 </section>
 
+<!-- ============ COUNTER (POS) SALES ============ -->
+<section class="section" id="pos">
+  <div class="wrap">
+    <div class="split rev">
+      <div class="split-copy reveal d2">
+        <span class="feature-tag brand"><i class="ti ti-sparkles"></i> New</span>
+        <h2 style="margin-top:14px">Ring up the counter, too.</h2>
+        <p>Not every dollar comes off a cut sheet. Somebody walks in for a case of bacon, a box of summer sausage, a bundle of ground — ring it up right there. A counter sale gets its own invoice with its own typed lines, takes the next number in the same run as your processing invoices, and lands in the same reports.</p>
+        <ul class="flist">
+          <li><i class="ti ti-check"></i> Counter sales that aren't tied to a cut sheet at all</li>
+          <li><i class="ti ti-check"></i> Bill it to a customer, a farmer, or just <b>Walk-in</b></li>
+          <li><i class="ti ti-check"></i> Type your own lines — description, qty, unit price, taxable or not</li>
+          <li><i class="ti ti-check"></i> One invoice number run for the shop, cut sheets and counter alike</li>
+          <li><i class="ti ti-check"></i> Finalizing freezes the sale, and a completed one can't be casually deleted</li>
+          <li><i class="ti ti-check"></i> Counter revenue shows up in reports beside processing, so you see the whole business</li>
+        </ul>
+      </div>
+      <div class="split-media reveal">
+        <div class="panel pos-demo" data-pos data-total-cents="6035">
+          <div class="panel-chrome">
+            <div class="panel-dots"><span></span><span></span><span></span></div>
+            <div class="panel-url">New POS sale</div>
+          </div>
+          <div class="pos-body">
+            <div class="pos-who">
+              <span class="pw-ic"><i class="ti ti-cash"></i></span>
+              <div><b>Walk-in</b><small>Counter sale · no cut sheet</small></div>
+              <span class="bill-status-pill" data-pos-status style="margin-left:auto"><i class="ti ti-pencil"></i> Draft</span>
+            </div>
+            <div class="pos-lines">
+              <div class="pos-line"><div><div class="pl-m">Thick-cut bacon</div><div class="pl-s">4 lb × $7.50 · taxable</div></div><div class="pl-a">$30.00</div></div>
+              <div class="pos-line"><div><div class="pl-m">Summer sausage</div><div class="pl-s">2 × $9.00 · taxable</div></div><div class="pl-a">$18.00</div></div>
+              <div class="pos-line"><div><div class="pl-m">Ground beef · 85/15</div><div class="pl-s">5 lb × $1.85 · taxable</div></div><div class="pl-a">$9.25</div></div>
+            </div>
+            <div class="bill-sum pos-sum">
+              <div class="bill-sumrow"><span>Subtotal</span><span class="v">$57.25</span></div>
+              <div class="bill-sumrow"><span>Sales tax · 6.5%</span><span class="v">$3.10</span></div>
+              <div class="bill-sumrow total"><span>Total</span><span class="v" data-pos-total>$0.00</span></div>
+            </div>
+            <div class="bill-steps">
+              <span class="bstep active" data-pos-step="draft"><i class="ti ti-pencil"></i> Draft</span>
+              <i class="ti ti-chevron-right bill-arrow"></i>
+              <span class="bstep" data-pos-step="finalized"><i class="ti ti-lock"></i> Invoice #1043</span>
+              <i class="ti ti-chevron-right bill-arrow"></i>
+              <span class="bstep" data-pos-step="paid"><i class="ti ti-cash"></i> Paid</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ REPORTS ============ -->
 <section class="section bg-paper2" id="reports">
   <div class="wrap">
@@ -592,9 +779,10 @@
         <p>Every kill and every invoice rolls up into plain-English reports. See how many animals you butchered, what you billed, what you've actually collected, and where it came from — by animal, by month, by farmer — for any date range you pick. No spreadsheet exports, no guessing at year-end.</p>
         <ul class="flist">
           <li><i class="ti ti-check"></i> Animals butchered, revenue, collected vs. outstanding &amp; average $/animal</li>
-          <li><i class="ti ti-check"></i> Breakdowns by animal, by month and your top farmers</li>
+          <li><i class="ti ti-check"></i> Breakdowns by animal, by month and your top farmers — <b>counter sales included</b></li>
           <li><i class="ti ti-check"></i> Invoices grouped by status, so you know what's still owed</li>
           <li><i class="ti ti-check"></i> Any range — last week to all-time, or a custom start and end</li>
+          <li><i class="ti ti-check"></i> Owner-level view: reports are Admin-only, so figures stay with the people who own them</li>
         </ul>
       </div>
       <div class="split-media reveal">
@@ -611,11 +799,12 @@
               <div class="rep-chart">
                 <div class="rep-chart-head"><b>Revenue by animal</b><span>this year</span></div>
                 <div class="rep-rows">
-                  <div class="rep-row"><span class="rr-l"><span class="badge b-beef">Beef</span></span><span class="rr-track"><span class="rr-bar" data-w="100"></span></span><span class="rr-v">$31.2k</span></div>
-                  <div class="rep-row"><span class="rr-l"><span class="badge b-pork">Pork</span></span><span class="rr-track"><span class="rr-bar" data-w="31"></span></span><span class="rr-v">$9.8k</span></div>
-                  <div class="rep-row"><span class="rr-l"><span class="badge b-lamb">Lamb</span></span><span class="rr-track"><span class="rr-bar" data-w="13"></span></span><span class="rr-v">$4.2k</span></div>
+                  <div class="rep-row"><span class="rr-l"><span class="badge b-beef">Beef</span></span><span class="rr-track"><span class="rr-bar" data-w="100"></span></span><span class="rr-v">$29.4k</span></div>
+                  <div class="rep-row"><span class="rr-l"><span class="badge b-pork">Pork</span></span><span class="rr-track"><span class="rr-bar" data-w="33"></span></span><span class="rr-v">$9.8k</span></div>
+                  <div class="rep-row"><span class="rr-l"><span class="badge b-lamb">Lamb</span></span><span class="rr-track"><span class="rr-bar" data-w="14"></span></span><span class="rr-v">$4.2k</span></div>
                   <div class="rep-row"><span class="rr-l"><span class="badge b-warn">Goat</span></span><span class="rr-track"><span class="rr-bar" data-w="6"></span></span><span class="rr-v">$1.9k</span></div>
                   <div class="rep-row"><span class="rr-l"><span class="badge b-warn">Deer</span></span><span class="rr-track"><span class="rr-bar" data-w="4"></span></span><span class="rr-v">$1.2k</span></div>
+                  <div class="rep-row"><span class="rr-l"><span class="badge b-field">Counter</span></span><span class="rr-track"><span class="rr-bar" data-w="6"></span></span><span class="rr-v">$1.8k</span></div>
                 </div>
               </div>
             </div>
@@ -672,8 +861,9 @@
         <ul class="flist">
           <li><i class="ti ti-check"></i> Your own number — each shop sends from its own Twilio account, nothing shared</li>
           <li><i class="ti ti-check"></i> Shared inbox — the office, not somebody's phone</li>
-          <li><i class="ti ti-check"></i> "Order ready" &amp; pickup reminders in a tap</li>
-          <li><i class="ti ti-check"></i> Send a photo of the packaged order or cut sheet (MMS)</li>
+          <li><i class="ti ti-check"></i> Saved message templates that fill in the customer's animal and <b>sign with your name</b></li>
+          <li><i class="ti ti-check"></i> Send a photo — or a video — of the packaged order or cut sheet</li>
+          <li><i class="ti ti-check"></i> Set your open days &amp; hours; after-hours texts get one polite auto-reply</li>
           <li><i class="ti ti-check"></i> Every text tied to the customer and their order</li>
         </ul>
       </div>
@@ -704,6 +894,15 @@
         </div>
       </div>
     </div>
+
+    <div class="chip-grid">
+      <div class="chip-feat reveal"><i class="ti ti-user"></i><div><b>New number texts in? Add them on the spot</b><p>An unknown number lands in the inbox — create the customer and connect the thread without leaving the conversation, or link it to somebody you already have.</p></div></div>
+      <div class="chip-feat reveal d1"><i class="ti ti-message"></i><div><b>Internal notes</b><p>Leave a note on the thread for the next person on shift. It sits with the conversation and never gets sent to the customer.</p></div></div>
+      <div class="chip-feat reveal d2"><i class="ti ti-clock-hour-4"></i><div><b>Snooze &amp; auto-close</b><p>Handled it? Drop the thread off the active inbox until later. Any reply from the customer wakes it straight back up.</p></div></div>
+      <div class="chip-feat field reveal"><i class="ti ti-calendar-event"></i><div><b>Start the work from the text</b><p>Book a new kill entry or open a new cut sheet for that customer right from the conversation — the details carry over.</p></div></div>
+      <div class="chip-feat field reveal d1"><i class="ti ti-lock"></i><div><b>Opt-outs respected</b><p>If a customer texts STOP, sending is disabled on that thread and the inbox tells you why — you can still keep internal notes.</p></div></div>
+      <div class="chip-feat field reveal d2"><i class="ti ti-refresh"></i><div><b>Nothing silently fails</b><p>Delivery status comes back from the carrier. A text that didn't land is flagged with a Retry button, not lost.</p></div></div>
+    </div>
   </div>
 </section>
 
@@ -718,12 +917,16 @@
     <div class="grid-3" style="margin-bottom:34px">
       <div class="fcard field reveal"><div class="ficon"><i class="ti ti-building-store"></i></div><h3>Your shop, your brand</h3><p>Each company gets its own name and logo across the portal, and its own animals and cut-sheet fields.</p></div>
       <div class="fcard reveal d1"><div class="ficon"><i class="ti ti-shield-lock"></i></div><h3>Locked-down data</h3><p>Nothing is readable or writable without a staff login. Row-level security enforces separation in the database itself.</p></div>
-      <div class="fcard reveal d2"><div class="ficon"><i class="ti ti-user-shield"></i></div><h3>Roles that fit the shop</h3><p>Admin and office roles decide who can change staff and settings versus who just runs the day.</p></div>
+      <div class="fcard reveal d2"><div class="ficon"><i class="ti ti-user-shield"></i></div><h3>Roles that fit the shop</h3><p>Admin, Office Manager and a read-only Viewer. Admins own settings and the money view; office staff run the day; a Viewer can look without touching a thing.</p></div>
     </div>
     <div class="secure-grid">
       <div class="secure reveal"><i class="ti ti-refresh"></i><div><b>Real-time everywhere</b><p>Edits sync instantly across the office and the floor — no refresh, no stale copy of the truth.</p></div></div>
       <div class="secure reveal d1"><i class="ti ti-device-tablet"></i><div><b>Works on any device</b><p>Desk browser, the tablet by the scale, or a phone — touch drag-and-drop included on iPad and iPhone.</p></div></div>
       <div class="secure reveal d2"><i class="ti ti-file-import"></i><div><b>Bring your records</b><p>Import your existing customers, farmers, cut sheets and kills from CSV, with header auto-mapping.</p></div></div>
+      <div class="secure reveal d3"><i class="ti ti-copy"></i><div><b>And take them back out</b><p>Download a full backup of the shop as JSON, or pull CSVs of cut sheets, kills, customers, farmers and cut days.</p></div></div>
+      <div class="secure reveal"><i class="ti ti-clock-hour-4"></i><div><b>Your time zone, your hours</b><p>Set the shop's time zone once and dates, cut days and after-hours replies all line up with the clock on your wall.</p></div></div>
+      <div class="secure reveal d1"><i class="ti ti-lock"></i><div><b>Sign-out you control</b><p>Choose how many idle days before a login is signed out — tight for the office tablet, longer for the owner's laptop.</p></div></div>
+      <div class="secure reveal d2"><i class="ti ti-bolt"></i><div><b>Nothing loads from a CDN</b><p>Fonts, icons and libraries are served from the app itself, so a blocked domain or spotty shop connection can't break the portal mid-shift.</p></div></div>
       <div class="secure reveal d3"><i class="ti ti-cloud-check"></i><div><b>Nothing to install</b><p>It's a web portal — open a link and sign in. No servers to babysit, backups handled for you.</p></div></div>
     </div>
   </div>
@@ -782,7 +985,27 @@
       <div class="mfcard field reveal d3">
         <div class="mf-ic"><i class="ti ti-adjustments"></i></div>
         <h4>Statuses that fit</h4>
-        <p>Rename and reorder the kill and order stages to match how your shop actually moves a job across the floor.</p>
+        <p>Relabel, recolor, reorder and hide the kill and order stages — or add your own — to match how your shop actually moves a job.</p>
+      </div>
+      <div class="mfcard reveal">
+        <div class="mf-ic"><i class="ti ti-message-2"></i></div>
+        <h4>Message templates</h4>
+        <p>Write the pre-typed texts once. They fill in that customer's animal and sign off with the first name of whoever's logged in.</p>
+      </div>
+      <div class="mfcard field reveal d1">
+        <div class="mf-ic"><i class="ti ti-list-details"></i></div>
+        <h4>Your kill sheet columns</h4>
+        <p>Pick what shows on the kill sheet and in what order, so the printout matches the one your crew already reads.</p>
+      </div>
+      <div class="mfcard reveal d2">
+        <div class="mf-ic"><i class="ti ti-cooker"></i></div>
+        <h4>Add your own animals</h4>
+        <p>Beyond the five built in — add an animal with its own portion labels and fractions, and design its cut sheet from scratch.</p>
+      </div>
+      <div class="mfcard field reveal d3">
+        <div class="mf-ic"><i class="ti ti-clipboard-list"></i></div>
+        <h4>Default cut sheets</h4>
+        <p>Set a default sheet per species so a new order starts prefilled with your house standard instead of a blank form.</p>
       </div>
     </div>
   </div>
@@ -800,7 +1023,7 @@
       <div class="step reveal"><div class="step-num">1</div><i class="ti ti-tractor step-ico"></i><h4>Book the kill</h4><p>Schedule the animal with the farmer, species and deposit.</p></div>
       <div class="step reveal d1"><div class="step-num">2</div><i class="ti ti-clipboard-list step-ico"></i><h4>Take the order</h4><p>The customer's cut sheet is filled in and saved to the job.</p></div>
       <div class="step reveal d2"><div class="step-num">3</div><i class="ti ti-scale step-ico"></i><h4>Tag &amp; weigh</h4><p>Each head is tagged and weighed, sheet attached to the carcass.</p></div>
-      <div class="step reveal d3"><div class="step-num">4</div><i class="ti ti-tools-kitchen-2 step-ico"></i><h4>Cut &amp; wrap</h4><p>The floor works from the digital sheet; status moves to ready.</p></div>
+      <div class="step reveal d3"><div class="step-num">4</div><i class="ti ti-meat step-ico"></i><h4>Cut &amp; wrap</h4><p>Butcher View runs the day — final weights and storage go down as you work.</p></div>
       <div class="step reveal d4"><div class="step-num">5</div><i class="ti ti-message-2-check step-ico"></i><h4>Text it's ready</h4><p>The customer gets a text on your shop's number and comes in.</p></div>
       <div class="step reveal d4"><div class="step-num">6</div><i class="ti ti-receipt step-ico"></i><h4>Bill &amp; collect</h4><p>The invoice tallies from the sheet; mark it paid — it lands in reports.</p></div>
     </div>
@@ -837,7 +1060,7 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <a href="#top" class="brand foot-mark" aria-label="Butcher Core home">
-          <span class="brand-mark"><i class="ti ti-meat"></i></span>
+          <img class="brand-logo" src="Images/butchercorelogo.png" alt="" width="42" height="42" loading="lazy" decoding="async">
           <span class="brand-name">Butcher<b> Core</b></span>
         </a>
         <p>Operations software for meat processors and custom butcher shops — kill schedule, cut sheets, customers and farmers, in one portal built on the floor.</p>
@@ -847,7 +1070,10 @@
         <h5>Features</h5>
         <a href="#schedule">Kill schedule</a>
         <a href="#cutsheets">Cut sheets</a>
+        <a href="#butcherview">Butcher View</a>
+        <a href="#cutdays">Cut days &amp; capacity</a>
         <a href="#billing">Billing &amp; invoices</a>
+        <a href="#pos">Counter sales</a>
         <a href="#reports">Reports</a>
         <a href="#texting">Texting</a>
         <a href="#security">Multi-shop &amp; security</a>
@@ -878,6 +1104,6 @@
   </div>
 </footer>
 
-<script src="main.js?v=6"></script>
+<script src="main.js?v=7"></script>
 </body>
 </html>

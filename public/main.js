@@ -186,9 +186,12 @@
     });
   })();
 
-  /* ---- animated billing / invoice demo (looping) ---- */
-  (function initBillDemos() {
-    var demos = document.querySelectorAll('[data-bill-demo]');
+  /* ---- animated ledger demos: the cut-sheet invoice and the counter (POS) sale ----
+     Both tell the same story — lines land, the total counts up, then the status walks
+     draft → finalized → paid — so they share one implementation and differ only in
+     which hooks they read. */
+  function initLedgerDemos(rootSel, sel) {
+    var demos = document.querySelectorAll(rootSel);
     if (!demos.length) return;
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var money = function (cents) {
@@ -196,12 +199,12 @@
     };
 
     demos.forEach(function (demo) {
-      var lines = Array.prototype.slice.call(demo.querySelectorAll('.bill-line'));
-      var sum = demo.querySelector('.bill-sum');
-      var totalEl = demo.querySelector('[data-bill-total]');
+      var lines = Array.prototype.slice.call(demo.querySelectorAll(sel.line));
+      var sum = demo.querySelector(sel.sum);
+      var totalEl = demo.querySelector(sel.total);
       var totalCents = parseInt(demo.getAttribute('data-total-cents'), 10) || 0;
-      var pill = demo.querySelector('[data-bill-status]');
-      var steps = Array.prototype.slice.call(demo.querySelectorAll('[data-step]'));
+      var pill = demo.querySelector(sel.status);
+      var steps = Array.prototype.slice.call(demo.querySelectorAll('[' + sel.stepAttr + ']'));
 
       var PILL = {
         draft:     { cls: '', html: '<i class="ti ti-pencil"></i> Draft' },
@@ -212,7 +215,7 @@
         if (pill) { pill.className = 'bill-status-pill ' + PILL[key].cls; pill.innerHTML = PILL[key].html; }
         var order = ['draft', 'finalized', 'paid'], idx = order.indexOf(key);
         steps.forEach(function (s) {
-          var i = order.indexOf(s.getAttribute('data-step'));
+          var i = order.indexOf(s.getAttribute(sel.stepAttr));
           s.classList.toggle('active', i === idx);
           s.classList.toggle('done', i < idx);
         });
@@ -271,6 +274,147 @@
             else { playing = false; clearTimers(); }
           });
         }, { threshold: 0.35 });
+        io.observe(demo);
+      } else { play(); }
+    });
+  }
+
+  initLedgerDemos('[data-bill-demo]', {
+    line: '.bill-line', sum: '.bill-sum', total: '[data-bill-total]',
+    status: '[data-bill-status]', stepAttr: 'data-step'
+  });
+  initLedgerDemos('[data-pos]', {
+    line: '.pos-line', sum: '.pos-sum', total: '[data-pos-total]',
+    status: '[data-pos-status]', stepAttr: 'data-pos-step'
+  });
+
+  /* ---- Butcher View: final weights get recorded cut by cut, total tallies, saves ---- */
+  (function initButcherView() {
+    var demos = document.querySelectorAll('[data-bv]');
+    if (!demos.length) return;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var lb = function (n) { return n.toFixed(1); };
+
+    demos.forEach(function (demo) {
+      var cells = Array.prototype.slice.call(demo.querySelectorAll('[data-wt]'));
+      var totalEl = demo.querySelector('[data-bv-total]');
+      var saveEl = demo.querySelector('[data-bv-save]');
+      var statusEl = demo.querySelector('[data-bv-status]');
+      var grand = parseFloat(demo.getAttribute('data-total')) || 0;
+
+      function fill(cell) { cell.textContent = cell.getAttribute('data-wt'); cell.classList.add('filled'); }
+      function setSaved(on) {
+        if (!saveEl) return;
+        saveEl.classList.toggle('saved', on);
+        saveEl.innerHTML = on
+          ? '<i class="ti ti-check"></i> Saved'
+          : '<i class="ti ti-cloud-check"></i> Saves automatically';
+      }
+      function setReady(on) {
+        if (!statusEl) return;
+        statusEl.classList.toggle('ready', on);
+        statusEl.innerHTML = on
+          ? '<i class="ti ti-checks"></i> Ready for pickup'
+          : '<i class="ti ti-tools-kitchen-2"></i> Cutting';
+      }
+
+      if (reduce) {
+        cells.forEach(fill);
+        if (totalEl) totalEl.textContent = lb(grand);
+        setSaved(true); setReady(true);
+        return;
+      }
+
+      var timers = [], playing = false;
+      function clearTimers() { timers.forEach(clearTimeout); timers = []; }
+      function reset() {
+        cells.forEach(function (c) { c.textContent = '—'; c.classList.remove('filled'); });
+        if (totalEl) totalEl.textContent = '0.0';
+        setSaved(false); setReady(false);
+      }
+      function play() {
+        clearTimers();
+        reset();
+        playing = true;
+        var t = 700, running = 0;
+        cells.forEach(function (c) {
+          timers.push(setTimeout(function () {
+            fill(c);
+            running += parseFloat(c.getAttribute('data-wt')) || 0;
+            if (totalEl) totalEl.textContent = lb(running);
+          }, t));
+          t += 850;
+        });
+        timers.push(setTimeout(function () { setSaved(true); }, t)); t += 1100;
+        timers.push(setTimeout(function () { setReady(true); }, t)); t += 3400;
+        timers.push(setTimeout(play, t));
+      }
+
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { if (!playing) play(); }
+            else { playing = false; clearTimers(); }
+          });
+        }, { threshold: 0.3 });
+        io.observe(demo);
+      } else { play(); }
+    });
+  })();
+
+  /* ---- cut day calendar: days get marked, then the capacity bars fill ---- */
+  (function initCutDays() {
+    var demos = document.querySelectorAll('[data-cutdays]');
+    if (!demos.length) return;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    demos.forEach(function (demo) {
+      var days = Array.prototype.slice.call(demo.querySelectorAll('[data-cd]'));
+      var fills = Array.prototype.slice.call(demo.querySelectorAll('[data-cdw]'));
+      var note = demo.querySelector('.cd-note');
+
+      function mark(d) { d.classList.add(d.getAttribute('data-cd')); }
+
+      if (reduce) {
+        days.forEach(mark);
+        fills.forEach(function (f) { f.style.width = f.getAttribute('data-cdw') + '%'; });
+        return;
+      }
+
+      if (note) note.style.transition = 'opacity .45s ease';
+      var timers = [], playing = false;
+      function clearTimers() { timers.forEach(clearTimeout); timers = []; }
+      function reset() {
+        days.forEach(function (d) { d.classList.remove('on', 'full'); });
+        fills.forEach(function (f) { f.style.width = '0%'; });
+        if (note) note.style.opacity = '0';
+      }
+      function play() {
+        clearTimers();
+        reset();
+        playing = true;
+        var t = 500;
+        days.forEach(function (d) {
+          timers.push(setTimeout(function () { mark(d); }, t));
+          t += 190;
+        });
+        t += 250;
+        fills.forEach(function (f, i) {
+          timers.push(setTimeout(function () { f.style.width = f.getAttribute('data-cdw') + '%'; }, t + i * 260));
+        });
+        t += fills.length * 260 + 900;
+        timers.push(setTimeout(function () { if (note) note.style.opacity = '1'; }, t));
+        t += 3600;
+        timers.push(setTimeout(play, t));
+      }
+
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { if (!playing) play(); }
+            else { playing = false; clearTimers(); }
+          });
+        }, { threshold: 0.3 });
         io.observe(demo);
       } else { play(); }
     });
@@ -373,7 +517,7 @@
 
       if (errEl) { errEl.style.display = 'none'; errEl.textContent = ''; }
       if (submitBtn) {
-        submitBtn.innerHTML = '<i class="ti ti-loader-2"></i> Sending…';
+        submitBtn.innerHTML = '<i class="ti ti-refresh"></i> Sending…';
         submitBtn.disabled = true;
       }
 

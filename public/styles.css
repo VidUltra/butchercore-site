@@ -164,6 +164,16 @@ section[id]{scroll-margin-top:88px}
   box-shadow:0 4px 12px rgba(155,46,38,.34);
 }
 .brand-mark i{color:#fff;font-size:22px}
+
+/* the real emblem (cleaver + chef hat in the oxblood ring). `.brand-mark` above stays
+   the generic square used inside the *tenant* mockups — that's a shop's own logo slot,
+   not ours, so it must not pick up Butcher Core's mark. */
+.brand-logo{width:42px;height:42px;object-fit:contain;display:block;flex-shrink:0}
+/* on the dark footer the emblem's black cleaver disappears — sit it on a light disc */
+.foot-mark .brand-logo{background:#fff;border-radius:50%;padding:2px;
+  box-shadow:0 2px 10px rgba(0,0,0,.28)}
+/* wordmark lockup (BUTCHERCORE + "software for butchers") */
+.brand-wordmark{display:block;height:auto;max-width:100%}
 .brand-name{font-family:var(--display);font-size:19px;font-weight:600;letter-spacing:-.02em;line-height:1;color:var(--ink)}
 .brand-name b{font-weight:600}
 .brand-tld{color:var(--brand)}
@@ -347,8 +357,11 @@ table.mini tr:last-child td{border-bottom:none}
 .fcard-link i{font-size:16px;transition:transform .15s}
 .fcard-link:hover i{transform:translateX(4px)}
 .flist{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:9px}
-.flist li{display:flex;align-items:flex-start;gap:10px;font-size:.97rem;color:var(--ink-2);line-height:1.5}
-.flist li i{color:var(--field);font-size:18px;margin-top:1px;flex-shrink:0}
+/* The row is laid out with the tick absolutely positioned rather than as a flex item:
+   a flex li turns every inline child into its own flex item, so an emphasised phrase
+   (<b>) would break onto its own column mid-sentence instead of flowing with the text. */
+.flist li{position:relative;padding-left:28px;font-size:.97rem;color:var(--ink-2);line-height:1.5}
+.flist li i{position:absolute;left:0;top:2px;color:var(--field);font-size:18px}
 
 /* ============================ Split feature rows ============================ */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
@@ -706,6 +719,121 @@ footer{background:var(--ink);color:rgba(244,240,231,.75);padding:60px 0 26px}
 @media(max-width:900px){.mini-feat{grid-template-columns:repeat(2,1fr);gap:16px}}
 @media(max-width:460px){.mini-feat{grid-template-columns:1fr}}
 
+/* ---------------- Butcher View — the cutting-floor screen ---------------- */
+.bv-demo{max-width:460px;width:100%;margin:0 auto}
+.bv-body{padding:14px;background:var(--surface-2)}
+/* one boxed section per farmer drop-off, the way the floor screen groups a kill */
+.bv-kill{border:2px solid var(--brand-line);border-radius:14px;background:var(--surface);padding:12px 13px 13px}
+.bv-killhead{display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  padding-bottom:10px;margin-bottom:11px;border-bottom:2px dashed var(--border)}
+.bv-farm{font-family:var(--display);font-size:15px;font-weight:600;letter-spacing:-.01em}
+.bv-day{margin-left:auto;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;
+  color:var(--ink-3);background:var(--surface-2);border:1px solid var(--border);padding:3px 9px;border-radius:999px}
+/* the kill note — one note per drop-off, repeated on every sheet under it */
+.bv-note{display:flex;gap:8px;align-items:flex-start;padding:9px 11px;margin-bottom:11px;
+  background:var(--warn-soft);border:1px dashed var(--warn);border-radius:10px}
+.bv-note>i{font-size:15px;color:var(--warn);flex-shrink:0;margin-top:1px}
+.bv-note-l{display:block;font-size:9.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--warn);margin-bottom:2px}
+.bv-note-t{font-size:12px;font-weight:700;line-height:1.4;color:var(--ink)}
+.bv-sheet{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:9px}
+.bv-cust{font-size:13px;font-weight:800}
+.bv-store{display:inline-flex;align-items:center;gap:5px;margin-left:auto;font-size:10.5px;font-weight:700;
+  color:var(--ink-2);background:var(--surface-2);border:1px solid var(--border);padding:4px 9px;border-radius:8px}
+.bv-store i{font-size:13px;color:var(--ink-3)}
+/* the per-cut audit grid: what they chose vs. what actually came off the saw */
+.bv-grid{border:1px solid var(--border);border-radius:11px;overflow:hidden}
+.bv-gh,.bv-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr) 74px;gap:10px;
+  align-items:center;padding:8px 11px}
+.bv-gh{background:var(--surface-2);border-bottom:1px solid var(--border);font-size:9.5px;font-weight:800;
+  letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3)}
+.bv-gh .bv-w{text-align:right}
+.bv-row{border-top:1px solid var(--border);font-size:11.5px}
+.bv-row:first-of-type{border-top:none}
+.bv-cat{font-weight:600;color:var(--ink-2);min-width:0;overflow-wrap:anywhere}
+.bv-sel{font-weight:800;color:var(--ink);min-width:0;overflow-wrap:anywhere}
+.bv-w{text-align:right;font-weight:800;font-variant-numeric:tabular-nums;
+  border:1px solid var(--border-strong);border-radius:7px;padding:4px 7px;background:var(--surface);
+  transition:border-color .2s,background .2s,box-shadow .2s}
+.bv-w.filled{border-color:var(--brand-line);background:var(--brand-soft);color:var(--brand-700)}
+.bv-tot{display:flex;justify-content:flex-end;align-items:baseline;gap:10px;padding:9px 11px;
+  border-top:2px solid var(--border-strong);background:var(--surface-2);font-size:11px;font-weight:700;color:var(--ink-2)}
+.bv-tot b{font-family:var(--display);font-size:17px;font-weight:600;letter-spacing:-.02em;color:var(--ink)}
+.bv-foot{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:10px}
+.bv-save{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:800;color:var(--ink-3);
+  transition:color .25s}
+.bv-save.saved{color:var(--ok)}
+.bv-status{margin-left:auto;display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:800;
+  padding:4px 10px;border-radius:999px;background:var(--warn-soft);color:var(--warn);
+  transition:background .3s,color .3s}
+.bv-status.ready{background:var(--ok-soft);color:var(--ok)}
+
+/* ---------------- Cut day calendar & capacity ---------------- */
+.cd-demo{max-width:430px;width:100%;margin:0 auto}
+.cd-body{padding:16px;background:var(--surface-2)}
+.cd-cal{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:13px}
+.cd-month{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;
+  font-size:12px;font-weight:800}
+.cd-month span{font-size:10px;font-weight:700;color:var(--ink-3)}
+.cd-dow,.cd-days{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.cd-dow{margin-bottom:5px}
+.cd-dow span{text-align:center;font-size:9px;font-weight:800;letter-spacing:.04em;color:var(--ink-3)}
+.cd-day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-radius:8px;
+  font-size:11px;font-weight:700;color:var(--ink-2);background:var(--surface-2);border:1px solid transparent;
+  transition:background .3s,color .3s,border-color .3s,transform .3s}
+.cd-day.mut{color:var(--ink-3);opacity:.45}
+.cd-day.on{background:var(--brand);color:#fff;border-color:var(--brand);font-weight:800;
+  box-shadow:0 3px 10px rgba(155,46,38,.3);transform:scale(1.06)}
+.cd-day.full{background:var(--warn-soft);color:var(--warn);border-color:var(--warn);font-weight:800}
+.cd-caps{margin-top:13px;display:flex;flex-direction:column;gap:9px}
+.cd-cap{background:var(--surface);border:1px solid var(--border);border-radius:11px;padding:10px 12px}
+.cd-cap-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:7px;font-size:11px;font-weight:700}
+.cd-cap-n{font-weight:800;font-variant-numeric:tabular-nums;color:var(--ink)}
+.cd-cap-n.at{color:var(--warn)}
+/* display:block matters — the track is a <span> in a plain block parent, and an inline
+   box ignores height/width, which collapses the bar to nothing */
+.cd-track{display:block;height:7px;border-radius:999px;background:var(--surface-2);
+  border:1px solid var(--border);overflow:hidden}
+.cd-fill{display:block;height:100%;width:0;border-radius:999px;background:var(--brand);
+  transition:width 1s cubic-bezier(.22,1,.36,1)}
+.cd-fill.at{background:var(--warn)}
+.cd-note{display:flex;align-items:center;gap:7px;margin-top:11px;padding:9px 11px;border-radius:10px;
+  background:var(--brand-soft);border:1px solid var(--brand-line);font-size:11.5px;font-weight:700;color:var(--brand-700)}
+.cd-note i{font-size:15px;flex-shrink:0}
+
+/* ---------------- Counter (POS) sale ---------------- */
+.pos-demo{max-width:400px;width:100%;margin:0 auto}
+.pos-body{padding:15px;background:var(--surface-2)}
+.pos-who{display:flex;align-items:center;gap:8px;margin-bottom:11px}
+.pos-who .pw-ic{width:32px;height:32px;border-radius:9px;background:var(--field-soft);color:var(--field);
+  display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.pos-who b{font-size:13px;font-weight:800;display:block;line-height:1.2}
+.pos-who small{font-size:10px;color:var(--ink-3);font-weight:600}
+.pos-lines{display:flex;flex-direction:column;gap:7px}
+.pos-line{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;
+  background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:9px 11px}
+.pos-line .pl-m{font-size:12px;font-weight:700;color:var(--ink)}
+.pos-line .pl-s{font-size:10px;color:var(--ink-3);font-weight:600;margin-top:2px}
+.pos-line .pl-a{font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:-.01em;white-space:nowrap}
+.pos-demo.anim .pos-line{opacity:0;transform:translateY(9px) scale(.985);
+  transition:opacity .34s ease,transform .34s cubic-bezier(.22,1,.36,1)}
+.pos-demo.anim .pos-line.show{opacity:1;transform:none}
+.pos-demo.anim .pos-sum{opacity:0;transition:opacity .4s ease}
+.pos-demo.anim .pos-sum.show{opacity:1}
+
+/* ---------------- feature chip grids (inbox extras, admin controls) ---------------- */
+.chip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}
+.chip-feat{display:flex;gap:11px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);
+  border-radius:12px;padding:14px 15px;box-shadow:var(--shadow-sm);
+  transition:transform .16s,box-shadow .16s,border-color .16s}
+.chip-feat:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);border-color:var(--border-strong)}
+.chip-feat>i{font-size:19px;color:var(--brand);flex-shrink:0;margin-top:1px}
+.chip-feat.field>i{color:var(--field)}
+.chip-feat b{display:block;font-size:.95rem;font-weight:700;margin-bottom:3px;letter-spacing:-.01em}
+.chip-feat p{font-size:.84rem;line-height:1.5;color:var(--ink-2)}
+@media(max-width:900px){.chip-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.chip-grid{grid-template-columns:1fr}}
+
 /* ============================ Responsive ============================ */
 @media(max-width:1120px){
   .steps{grid-template-columns:repeat(3,1fr)}
@@ -741,4 +869,17 @@ footer{background:var(--ink);color:rgba(244,240,231,.75);padding:60px 0 26px}
   .secure-grid{grid-template-columns:1fr}
   .kpi-row{grid-template-columns:1fr 1fr}
   .hero-cta .btn{flex:1 1 100%}
+  /* the brand lockup + "Book a demo" + burger together overrun a 375px phone and
+     force the whole page to scroll sideways — tighten the brand to claw back room */
+  .brand-logo{width:34px;height:34px}
+  .brand-name{font-size:17px}
+  .brand-by{display:none}
+  /* a 1fr track floors at the item's min-content, and the wider mockup tables
+     (kill schedule, directory) push that past the viewport. minmax(0,1fr) lets the
+     column shrink; tightening the table then keeps every row on one line inside it. */
+  .split{grid-template-columns:minmax(0,1fr)}
+  .split-media .panel{overflow:hidden}
+  .split-media table.mini td{padding:7px 5px;font-size:10px}
+  .split-media .mini-head{padding:9px;font-size:11px}
+  .split-media .badge{padding:2px 6px;font-size:9px}
 }

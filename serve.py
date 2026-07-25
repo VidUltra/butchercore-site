@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """Static file server for local preview of the Butcher Core marketing site.
-Serves the ./public web root on port 4179 using an absolute directory so it
+Serves the ./public web root on port 4180 using an absolute directory so it
 works in restricted sandboxes (avoids os.getcwd())."""
 import functools
 import http.server
 import socketserver
 
-PORT = 4179
-DIRECTORY = "/Users/justinkeir/Documents/ClaudeCode/ButcherCore/public"
+PORT = 4180
+DIRECTORY = "/Users/justinkeir/Documents/ClaudeCode/ButcherCoreLandingPage/public"
 
 Handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=DIRECTORY)
 

@@ -32,14 +32,15 @@
 <meta name="twitter:image" content="https://butchercore.com/og-image.png">
 <meta name="twitter:image:alt" content="Butcher Core — operations software for meat processors and custom butcher shops.">
 
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
 <link rel="preload" href="fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts/fonts.css">
 <link rel="stylesheet" href="fonts/tabler-icons.css?v=6">
-<link rel="stylesheet" href="styles.css?v=6">
+<link rel="stylesheet" href="styles.css?v=7">
 
 <!-- Structured data: breadcrumbs + contact page -->
 <script type="application/ld+json">
@@ -83,7 +84,7 @@
 <header class="site-header">
   <div class="wrap nav">
     <a href="index.html" class="brand" aria-label="Butcher Core home">
-      <span class="brand-mark"><i class="ti ti-meat"></i></span>
+      <img class="brand-logo" src="Images/butchercorelogo.png" alt="" width="42" height="42" decoding="async">
       <span class="brand-text">
         <span class="brand-name">Butcher<b> Core</b></span>
         <span class="brand-by">by <b>VidUltra</b></span>
@@ -96,8 +97,11 @@
         <div class="nav-dd-menu">
           <a href="index.html#schedule"><i class="ti ti-calendar-event"></i><span><b>Kill schedule</b><small>Bookings, deposits &amp; confirmations</small></span></a>
           <a href="index.html#cutsheets"><i class="ti ti-clipboard-check"></i><span><b>Cut sheets</b><small>Custom forms, all 5 species</small></span></a>
+          <a href="index.html#butcherview"><i class="ti ti-meat"></i><span><b>Butcher View</b><small>The whole cut day, one screen</small></span></a>
+          <a href="index.html#cutdays"><i class="ti ti-calendar-check"></i><span><b>Cut days &amp; capacity</b><small>Never overbook a day again</small></span></a>
           <a href="index.html#history"><i class="ti ti-history"></i><span><b>Cut-sheet history</b><small>Reuse &amp; text last year's sheet</small></span></a>
           <a href="index.html#billing"><i class="ti ti-receipt"></i><span><b>Billing &amp; invoices</b><small>Rate cards, tax &amp; auto-billing</small></span></a>
+          <a href="index.html#pos"><i class="ti ti-cash"></i><span><b>Counter sales</b><small>Walk-ins, off the cut sheet</small></span></a>
           <a href="index.html#reports"><i class="ti ti-chart-bar"></i><span><b>Reports</b><small>Animals, dollars &amp; throughput</small></span></a>
           <a href="index.html#texting"><i class="ti ti-message-2"></i><span><b>Customer texting</b><small>Your own number, shared inbox</small></span></a>
           <a href="index.html#customers"><i class="ti ti-users"></i><span><b>Customers &amp; farmers</b><small>The people side, kept straight</small></span></a>
@@ -119,8 +123,11 @@
   <div class="mnav-group">Features</div>
   <a href="index.html#schedule" class="mnav-sub">Kill schedule</a>
   <a href="index.html#cutsheets" class="mnav-sub">Cut sheets</a>
+  <a href="index.html#butcherview" class="mnav-sub">Butcher View</a>
+  <a href="index.html#cutdays" class="mnav-sub">Cut days &amp; capacity</a>
   <a href="index.html#history" class="mnav-sub">Cut-sheet history</a>
   <a href="index.html#billing" class="mnav-sub">Billing &amp; invoices</a>
+  <a href="index.html#pos" class="mnav-sub">Counter sales</a>
   <a href="index.html#reports" class="mnav-sub">Reports</a>
   <a href="index.html#texting" class="mnav-sub">Customer texting</a>
   <a href="index.html#customers" class="mnav-sub">Customers &amp; farmers</a>
@@ -134,6 +141,9 @@
 <!-- ============ PAGE HERO ============ -->
 <section class="page-hero" style="padding-bottom:14px">
   <div class="wrap">
+    <img class="brand-wordmark reveal" src="Images/Fulllogo.png" alt="Butcher Core — software for butchers"
+         width="200" height="200" decoding="async"
+         style="width:150px;margin:0 auto 18px;height:auto">
     <span class="eyebrow center reveal">Let's talk</span>
     <h1 class="reveal">See Butcher Core running in your shop.</h1>
     <p class="reveal d1">Tell us a little about your operation and we'll set up a walkthrough with your own species, cuts and workflow — no pressure, no obligation.</p>
@@ -267,7 +277,7 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <a href="index.html" class="brand foot-mark" aria-label="Butcher Core home">
-          <span class="brand-mark"><i class="ti ti-meat"></i></span>
+          <img class="brand-logo" src="Images/butchercorelogo.png" alt="" width="42" height="42" loading="lazy" decoding="async">
           <span class="brand-name">Butcher<b> Core</b></span>
         </a>
         <p>Operations software for meat processors and custom butcher shops — kill schedule, cut sheets, customers and farmers, in one portal built on the floor.</p>
@@ -277,7 +287,10 @@
         <h5>Features</h5>
         <a href="index.html#schedule">Kill schedule</a>
         <a href="index.html#cutsheets">Cut sheets</a>
+        <a href="index.html#butcherview">Butcher View</a>
+        <a href="index.html#cutdays">Cut days &amp; capacity</a>
         <a href="index.html#billing">Billing &amp; invoices</a>
+        <a href="index.html#pos">Counter sales</a>
         <a href="index.html#reports">Reports</a>
         <a href="index.html#texting">Texting</a>
         <a href="index.html#security">Multi-shop &amp; security</a>
@@ -308,6 +321,6 @@
   </div>
 </footer>
 
-<script src="main.js?v=6"></script>
+<script src="main.js?v=7"></script>
 </body>
 </html>
