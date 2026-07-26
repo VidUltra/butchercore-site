@@ -40,7 +40,7 @@
 <link rel="preload" href="fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts/fonts.css">
 <link rel="stylesheet" href="fonts/tabler-icons.css?v=6">
-<link rel="stylesheet" href="styles.css?v=7">
+<link rel="stylesheet" href="styles.css?v=8">
 
 <!-- Structured data (schema.org / JSON-LD) -->
 <script type="application/ld+json">
@@ -152,6 +152,12 @@
   </div>
 </header>
 <nav class="mobile-nav" id="mobileNav">
+  <!-- "Book a demo" stays in the header at every width, so the drawer only needs
+       to carry Sign in — repeating the demo button here just stacked two identical
+       oxblood pills 50px apart. -->
+  <div class="mnav-cta">
+    <a href="https://app.butchercore.com" class="btn"><i class="ti ti-user"></i> Sign in</a>
+  </div>
   <a href="#top">Home</a>
   <div class="mnav-group">Features</div>
   <a href="#schedule" class="mnav-sub">Kill schedule</a>
@@ -167,8 +173,6 @@
   <a href="#security" class="mnav-sub">Multi-shop &amp; security</a>
   <a href="pricing.html">Pricing</a>
   <a href="contact.html">Contact</a>
-  <a href="https://app.butchercore.com" class="btn">Sign in</a>
-  <a href="contact.html" class="btn btn-primary">Book a demo</a>
 </nav>
 
 <!-- ============ HERO ============ -->
